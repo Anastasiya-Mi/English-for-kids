@@ -1,3 +1,4 @@
+
 console.log("123");
 const FRAGMENT = document.createDocumentFragment();
 let variables = {
@@ -692,7 +693,7 @@ let alt = element.alt;
   wrap.append(titleWrap);
   return wrap;
 }
-createCard(variables.category);
+createCard(variables.action);
 
 let categoryMain = document.querySelectorAll(".category_wrap");
 
@@ -741,22 +742,21 @@ function addButton(event){
           element.addEventListener("click", addAudio);
         } else{
           element.addEventListener("click", addAudio)
-        }        
-});          
+        }
+        
+                });     
+        
 };
 
 
 function addAudio(event){
   let target = event.currentTarget;
-  let target2 = event.target.tagName;
-  console.log(target2);
   let [value1,value] = target.className.split(' ');  
   let part = variables[value];
   let name = target.lastChild.firstChild.textContent;
   let obj = part.find(elem => elem.title === name);
   let url = obj.audio;
-  let audio = new Audio(url);  
-  if(target2 != "BUTTON"){  
+  let audio = new Audio(url);
   audio.play();
   audio.addEventListener("playing",(event) => {
     let category = document.querySelectorAll(".category");
@@ -768,7 +768,6 @@ function addAudio(event){
     category.forEach((element) =>{
       element.addEventListener("click", addAudio)});
   });
-}
 }
 
 

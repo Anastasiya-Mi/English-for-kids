@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.category_wrap{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+img{
+    max-width: 200px;
+}
