@@ -656,6 +656,7 @@ let variables = {
 };
 
 function createCard(value) {
+  // console.log(value)
   let content = document.querySelector(".content");
   value.forEach((element) => {
   let divCard = createElement(element);
@@ -666,6 +667,7 @@ function createCard(value) {
 
 function createBtn(){
 let btn = document.createElement("button");
+btn.classList.add('push');
 btn.innerText = "push";
 return btn;
 }
@@ -683,13 +685,22 @@ let alt = element.alt;
   img.setAttribute("src", imageLink);
   img.setAttribute("alt", alt);
   imgWrap.append(img);
-  let titleWrap = document.createElement("div");
+  let titleWrap = document.createElement("div");  
   titleWrap.classList.add("title_wrap");
   let title = document.createElement("h3");
   title.innerText = attribute_name;  
   titleWrap.append(title);
+  // let back = document.createElement("div");
+  // back.classList.add("back");
+  // let titleWrapBack = document.createElement("div");  
+  // titleWrapBack.classList.add("title_wrap_back");
+  // let titleBack = document.createElement("h3");
+  // titleBack.innerText = titleRu; 
+  // titleWrapBack.append(titleBack);
+  // back.append(titleWrapBack)
   wrap.append(imgWrap);
   wrap.append(titleWrap);
+  // wrap.append(back);
   return wrap;
 }
 createCard(variables.category);
@@ -718,10 +729,14 @@ element.addEventListener("click", addButton);
 })
   
 function addButton(event){
+  // event.preventDefault();
+ 
   let target = event.currentTarget;
         let text = target.textContent;
         let value = variables[text];
-        console.log(text) 
+        // console.log(text);
+        let content = document.querySelector(".content"); 
+        content.innerHTML ='';
         createCard(value);
   let titleWrap = document.querySelectorAll(".category > .title_wrap");
         titleWrap.forEach((element)=>{        
@@ -735,7 +750,7 @@ function addButton(event){
       let category = document.querySelectorAll(".category");     
       category.forEach((element) =>{
         let classValue = element.classList;
-        console.log(classValue.length);
+        // console.log(classValue.length);
         if(classValue.length === 1){
           element.classList.add(text);
           element.addEventListener("click", addAudio);
@@ -749,7 +764,7 @@ function addButton(event){
 function addAudio(event){
   let target = event.currentTarget;
   let target2 = event.target.tagName;
-  console.log(target2);
+  // console.log(target2);
   let [value1,value] = target.className.split(' ');  
   let part = variables[value];
   let name = target.lastChild.firstChild.textContent;
@@ -770,99 +785,94 @@ function addAudio(event){
   });
 }
 }
+ let btn = document.querySelector('.state');
+//  console.log(btn)
+
+ btn.addEventListener('click',changeMode);
 
 
+ function changeMode(event){
+  let target = event.currentTarget;
+  let state = target.getAttribute('value')
+   if (state === 'train'){    
+    target.setAttribute('value','play');
+    target.innerText = 'play';
+    let [value,page] = content.firstElementChild.className.split(' ');
+    console.log(page)
+    if (!(page === "category_wrap")){
+      let cards = document.querySelectorAll(".category");
+      cards.forEach((element)=>{
+        // element.lastChild.firstChild.innerHTML = '';
+        element.lastChild.innerHTML = '';
+
+      })
+    }
+    // console.log(place)
+    createBtnStart();    
+    let btnStartsGame= document.querySelector('.start_game');
+    btnStartsGame.addEventListener("click", gameStart);
+    categoryMain.forEach((element) => {
+      element.removeEventListener("click", addButton);
+        });
+        link.forEach((element) =>{
+          element.removeEventListener("click", addButton); 
+          element.addEventListener("click", (event)=>{
+            event.preventDefault();
+          }); 
+          })
+   } else{    
+    target.setAttribute('value','train');
+    target.innerText = 'train';
+    categoryMain.forEach((element) => {
+      element.addEventListener("click", addButton);
+        });
+        link.forEach((element) =>{          
+          element.addEventListener("click", addButton); 
+          })
+   }
+
+ }
 
 
-// let urlRoutes = {
-//   404:{
-//       template:"/templates/404.html",
-//       title:"",
-//       description: ""
-//   },
-//   "/":{
-//       template:"/index.html",
-//       title:"",
-//       description: ""
-//   },
-//   "/action":{
-//       template:"/templates/action.html",
-//       title:"",
-//       description: ""
-//   },
-//   "/animals":{
-//       template:"/templates/animals.html",
-//       title:"",
-//       description: ""
+ function gameStart (event){
+  let target = event.currentTarget.previousElementSibling.className;
+  console.log(target);
+   if(target === "category_wrap"){
+    let arrOfKeys = Object.keys(variables).splice(1,8);
+    let number = arrOfKeys.length; 
+    let max= number-1;
+    let min = 0;
+   let random = Math.floor(Math.random() * (max - min + 1) + min);  
+    let value =variables[arrOfKeys[random]];    
+    content.innerHTML ='';
+    createCard(value);
+    let children = content.childNodes;
+    children.forEach((element)=>{
+      element.classList.add(arrOfKeys[random]);
+      let title = element.lastChild.lastChild;
+      title.innerText ='';  
+      // createBtnStart();    
+    });
+    // let title = document.querySelector()
+    createBtnStart(); 
+  } else{
+    console.log(target);
+    let arrOfKeys = variables.target;
+    console.log(arrOfKeys);
 
-//   },
-//   "/birds":{
-//       template:"/templates/birds.html",
-//       title:"",
-//       description: ""
+  }
 
-//   },
-//   "/cloth":{
-//       template:"/templates/cloth.html",
-//       title:"",
-//       description: ""
+ }
 
-//   },
-//   "/emotions":{
-//       template:"/templates/emotions.html",
-//       title:"",
-//       description: ""
-//   },
-//   "/hobby":{
-//       template:"/templates/hobby.html",
-//       title:"",
-//       description: ""
-//   },
-//   "/pets":{
-//       template:"/templates/pets.html",
-//       title:"",
-//       description: "" 
-//   },
-//   "/sport":{
-//       template:"/templates/sport.html",
-//       title:"",
-//       description: "" 
-//   }
+function shake (arr){
 
-// }
+}
 
-// document.addEventListener('click',(e)=>{
-//   let {target} = e;
-//   if(!target.matches("a")){
-//       return;
-//   }
-//   e.preventDefault();
-//   urlRoute();
-// });
-
-
-
-// let urlRoute = (event)=>{
-//   event = event || window.event;
-//   event.preventDefault();
-//   window.history.pushState({},"",event.target.href);
-//   urlLocationHandler()
-// }
-
-// let urlLocationHandler = async()=>{
-//   let location = window.location.pathname;
-//   if(location.length === 0){
-//       location = "/";
-//   }
-
-// let route = urlRoutes[location] || urlRoutes[404];
-// let html = await fetch(route.template).then((response) => response.text());
-// console.log(html)
-// let contentID = document.getElementById("content");
-// FRAGMENT.append(html);
-
-// }
-
-// window.onpopstate = urlLocationHandler;
-// window.route = urlRoute;
-// urlLocationHandler();
+function createBtnStart(){
+    let btnStart = createBtn();
+    content.append(btnStart);
+    let btnStarts= document.querySelector('.content >.push');
+    btnStarts.classList.remove('push');
+    btnStarts.classList.add('start_game');
+    btnStarts.innerText = 'start game';
+}
