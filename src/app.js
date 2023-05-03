@@ -804,13 +804,14 @@ function addAudio(event){
       cards.forEach((element)=>{
         // element.lastChild.firstChild.innerHTML = '';
         element.lastChild.innerHTML = '';
-
+        element.removeEventListener('click',addAudio);
+        element.removeEventListener('click',addButton);
       })
     }
     // console.log(place)
     createBtnStart();    
     let btnStartsGame= document.querySelector('.start_game');
-    btnStartsGame.addEventListener("click", gameStart);
+    btnStartsGame.addEventListener("click", addPlayMode);
     categoryMain.forEach((element) => {
       element.removeEventListener("click", addButton);
         });
@@ -821,6 +822,9 @@ function addAudio(event){
           }); 
           })
    } else{    
+    let btnStartsGame= document.querySelector('.start_game');
+    console.log(btnStartsGame);
+    btnStartsGame.addEventListener("click", addPlayMode);
     target.setAttribute('value','train');
     target.innerText = 'train';
     categoryMain.forEach((element) => {
@@ -832,12 +836,13 @@ function addAudio(event){
    }
 
  }
+//  let arrOfAudio =[]
 
-
- function gameStart (event){
+ function addPlayMode (event){
   let target = event.currentTarget.previousElementSibling.className;
-  console.log(target);
+  // console.log(target);
    if(target === "category_wrap"){
+    console.log(target);
     let arrOfKeys = Object.keys(variables).splice(1,8);
     let number = arrOfKeys.length; 
     let max= number-1;
@@ -856,23 +861,152 @@ function addAudio(event){
     // let title = document.querySelector()
     createBtnStart(); 
   } else{
+    // btn.addEventListener('click',(event)=>{
+    //   console.log('hi');
+    // })
     console.log(target);
-    let arrOfKeys = variables.target;
-    console.log(arrOfKeys);
-
+    let [value,key] = target.split(' ')
+    let arrOfKeys = variables[key];
+    // console.log(arrOfKeys);
+    let arrOfAudio = [];
+    
+    arrOfKeys.forEach((element) =>{
+      let key = element.title;
+      let value = element.audio;
+      // let obj = {key:key,
+      // audio:value}
+      let obj = {[key]: value}
+      arrOfAudio.push(obj);
+    });
+    let btn = document.querySelector('.start_game');
+    let arrShake = shake (arrOfAudio);
+    // let btn = document.querySelector('.start_game');
+    // btn.addEventListener('click',(event)=>{
+    //   console.log('hi')
+    //   // playSound(arrShake);
+    // });
+    // console.log(arrShake);
+    // console.log('hi')
+    playSound(arrShake);
   }
 
  }
-
+// console.log(arrOfAudio)
 function shake (arr){
-
+ let newArr = arr.sort(()=>Math.random()-0.5);
+ return newArr;
 }
 
 function createBtnStart(){
+  let btnStarts= document.querySelector('.start_game');  
+  if(btnStarts === null){
     let btnStart = createBtn();
     content.append(btnStart);
     let btnStarts= document.querySelector('.content >.push');
     btnStarts.classList.remove('push');
     btnStarts.classList.add('start_game');
     btnStarts.innerText = 'start game';
+  } else{
+    return;
+  }
+    
+}
+
+
+function playSound(arr){
+  let clickedValue ="";
+let currentGame = document.querySelectorAll('.category');
+currentGame.forEach((element) =>{
+  element.removeEventListener('click',addAudio);
+  element.removeEventListener('click',addButton);
+  element.addEventListener('click',(event)=>{
+    let targetID = event.currentTarget.dataset.id;
+    console.log(targetID)
+    clickedValue = targetID;
+
+    
+    // for(let i=0;i<arr.length;i++){
+    //   let value = arr[i];
+    //   // console.log(arr[i]);
+    //   let correctAnswer = value.key;
+    //   let currentAudio = Object.values(value)[0];   
+    //   let track = new Audio(currentAudio);
+    //   function play(audio){
+    //     audio.play();
+    //   }
+    //   setTimeout(play,2000,track)
+    //   console.log(currentAudio);
+    // }
+});
+  // let index = 0;
+  //   let count = 0;
+  //   let element1 = arr[index];
+  //   // console.log(element1)
+  //   let start = Object.entries(element1);
+  //   let sound = Object.values(element1)[0];
+  //   let track = new Audio(sound);
+  //   console.log(track)
+  //   // let name = start[0][0];
+    // let sound1 = sound[0];
+
+    // console.log(name,sound)
+    // let track1 = new Audio(sound);
+    // console.log(track1)
+    // track.play();
+});
+    let index = 0;
+    let count = 0;
+    let element1 = arr[index];
+    // console.log(element1)
+    let start = Object.entries(element1);
+    let name = start[0][0];
+    let sound = Object.values(element1)[0];
+    let track = new Audio(sound);
+    console.log(track)
+    console.log(name);
+    if(clickedValue === name){
+      console.log("FFFFFFFFFFFFFFFFFFFFF")
+    } else {
+      console.log("!");
+    }
+    // let name = start[0][0];
+// let arrTrack = [];
+// arr.forEach((element) =>{
+//   console.log(element)
+//   // let arrTrack = [];
+//   let sound = Object.values(element)[0];
+//   let track = new Audio(sound);
+//   console.log(track)
+//   // arrTrack.push(track);  
+//   console.log(arrTrack)
+//   // track.play();
+//   track.addEventListener('ended',(event)=>{
+//     console.log('hi');
+//   })
+// console.log(arrTrack)
+// })
+// console.log(arrTrack);
+// let songIndex = 0;
+// for(let i=0;i<arrTrack.length;i++){
+//   nextSong(arrTrack, i)
+// }
+// nextSong(arrTrack, 0)
+
+// let target = event.currentTarget;
+// console.log(currentGame);
+// for(let i=0;i<arr.length;i++){
+//   let value = arr[i];
+//   let correctAnswer = value.key;
+//   let currentAudio = value.audio;
+
+//   console.log(correctAnswer);
+// }
+}
+let songIndex = 0;
+function nextSong(arr, soundIndex){
+  let value = arr[soundIndex];
+  value.play()
+  value.addEventListener('ended',(event)=>{
+    value.stop();
+  });
 }

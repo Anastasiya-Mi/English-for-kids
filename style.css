@@ -9,8 +9,8 @@
 }
 .category_wrap{
     border: 2px solid black;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
 }
 img{
     max-width: 200px;
