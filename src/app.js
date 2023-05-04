@@ -914,7 +914,17 @@ function createBtnStart(){
 
 
 function playSound(arr){
-  let clickedValue ="";
+let clickedValue ="";
+let index = 0;
+let countCorrect = 0;
+let countWrong =0 ;
+let element1 = arr[index];
+let start = Object.entries(element1);
+let name = start[0][0];
+let sound = Object.values(element1)[0];
+let track = new Audio(sound);
+console.log(name);
+track.play()
 let currentGame = document.querySelectorAll('.category');
 currentGame.forEach((element) =>{
   element.removeEventListener('click',addAudio);
@@ -923,90 +933,28 @@ currentGame.forEach((element) =>{
     let targetID = event.currentTarget.dataset.id;
     console.log(targetID)
     clickedValue = targetID;
+    let result = new Promise(function(resolve,reject){
+      if(clickedValue === name){
+      console.log(clickedValue);
+      countCorrect++;
+      index++;
+      resolve();
+      } else{
+        countWrong++;
+        console.log('((((((');
+        reject();
+      }
 
-    
-    // for(let i=0;i<arr.length;i++){
-    //   let value = arr[i];
-    //   // console.log(arr[i]);
-    //   let correctAnswer = value.key;
-    //   let currentAudio = Object.values(value)[0];   
-    //   let track = new Audio(currentAudio);
-    //   function play(audio){
-    //     audio.play();
-    //   }
-    //   setTimeout(play,2000,track)
-    //   console.log(currentAudio);
-    // }
 });
-  // let index = 0;
-  //   let count = 0;
-  //   let element1 = arr[index];
-  //   // console.log(element1)
-  //   let start = Object.entries(element1);
-  //   let sound = Object.values(element1)[0];
-  //   let track = new Audio(sound);
-  //   console.log(track)
-  //   // let name = start[0][0];
-    // let sound1 = sound[0];
+result.then(()=>{
+  console.log('4111');
+  })
 
-    // console.log(name,sound)
-    // let track1 = new Audio(sound);
-    // console.log(track1)
-    // track.play();
-});
-    let index = 0;
-    let count = 0;
-    let element1 = arr[index];
-    // console.log(element1)
-    let start = Object.entries(element1);
-    let name = start[0][0];
-    let sound = Object.values(element1)[0];
-    let track = new Audio(sound);
-    console.log(track)
-    console.log(name);
-    if(clickedValue === name){
-      console.log("FFFFFFFFFFFFFFFFFFFFF")
-    } else {
-      console.log("!");
-    }
-    // let name = start[0][0];
-// let arrTrack = [];
-// arr.forEach((element) =>{
-//   console.log(element)
-//   // let arrTrack = [];
-//   let sound = Object.values(element)[0];
-//   let track = new Audio(sound);
-//   console.log(track)
-//   // arrTrack.push(track);  
-//   console.log(arrTrack)
-//   // track.play();
-//   track.addEventListener('ended',(event)=>{
-//     console.log('hi');
-//   })
-// console.log(arrTrack)
-// })
-// console.log(arrTrack);
-// let songIndex = 0;
-// for(let i=0;i<arrTrack.length;i++){
-//   nextSong(arrTrack, i)
-// }
-// nextSong(arrTrack, 0)
-
-// let target = event.currentTarget;
-// console.log(currentGame);
-// for(let i=0;i<arr.length;i++){
-//   let value = arr[i];
-//   let correctAnswer = value.key;
-//   let currentAudio = value.audio;
-
-//   console.log(correctAnswer);
-// }
-}
-let songIndex = 0;
-function nextSong(arr, soundIndex){
-  let value = arr[soundIndex];
-  value.play()
-  value.addEventListener('ended',(event)=>{
-    value.stop();
+      // console.log(clickedValue);
+      // resolve();
+    });
   });
-}
+ 
+
+   
+    }
