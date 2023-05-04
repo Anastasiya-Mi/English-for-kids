@@ -911,50 +911,82 @@ function createBtnStart(){
   }
     
 }
-
-
-function playSound(arr){
-let clickedValue ="";
-let index = 0;
 let countCorrect = 0;
 let countWrong =0 ;
-let element1 = arr[index];
-let start = Object.entries(element1);
-let name = start[0][0];
-let sound = Object.values(element1)[0];
-let track = new Audio(sound);
-console.log(name);
-track.play()
+
+function playSound(arr){
+  let length = arr.length;
+let clickedValue ="";
+let index = 0;
+// let countCorrect = 0;
+// let countWrong =0 ;
+let name = playQue(index,length,arr,countCorrect,countWrong)
+// let element1 = arr[index];
+// let start = Object.entries(element1);
+// let name = start[0][0];
+// let sound = Object.values(element1)[0];
+// let track = new Audio(sound);
+// console.log(name);
+// track.play()
 let currentGame = document.querySelectorAll('.category');
 currentGame.forEach((element) =>{
   element.removeEventListener('click',addAudio);
   element.removeEventListener('click',addButton);
   element.addEventListener('click',(event)=>{
+    let target = event.currentTarget;
+    console.log(target);
     let targetID = event.currentTarget.dataset.id;
     console.log(targetID)
     clickedValue = targetID;
     let result = new Promise(function(resolve,reject){
       if(clickedValue === name){
       console.log(clickedValue);
+      target.classList.add('correct');
+      // target.removeEventListener();
       countCorrect++;
       index++;
       resolve();
       } else{
         countWrong++;
         console.log('((((((');
-        reject();
+        // reject();
       }
-
+    
 });
 result.then(()=>{
-  console.log('4111');
-  })
-
-      // console.log(clickedValue);
-      // resolve();
-    });
+  // console.log(countCorrect,'countCorrect')
+  // console.log(countWrong,'countWrong') 
+  name = playQue(index,length,arr,countCorrect,countWrong);
+})
+// console.log(countCorrect,'countCorrect')
+//   console.log(countWrong,'countWrong') 
   });
+  // console.log(countCorrect,'countCorrect')
+  // console.log(countWrong,'countWrong') 
+  // alert("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
+  });
+}
+//  alert("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
  
+    
 
-   
+
+    function playQue(num,num1,arr,count,count1){
+    if(num ===num1){
+      console.log('end');
+      console.log(countCorrect,'countCorrect')
+      console.log(countWrong,'countWrong')  
+      alert("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
+    }else{
+      let element1 = arr[num];
+      console.log(element1,num)
+      let start = Object.entries(element1);
+      let name = start[0][0];
+      console.log(element1,name)
+      let sound = Object.values(element1)[0];
+      let track = new Audio(sound);
+      console.log(name);
+      track.play();
+      return name;
+  }
     }
