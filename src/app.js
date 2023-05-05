@@ -709,10 +709,7 @@ let categoryMain = document.querySelectorAll(".category_wrap");
 
 categoryMain.forEach((element) => {
 element.addEventListener("click", addButton);
-  });
-
-
-
+});
 
 function lookForCategory(variabels, id) {
   for (key in variabels) {
@@ -720,8 +717,7 @@ function lookForCategory(variabels, id) {
       return variables[key];
     }
   }
-}
-
+};
 
 let link = document.querySelectorAll("a");
 link.forEach((element) =>{
@@ -840,15 +836,16 @@ function addAudio(event){
 
  function addPlayMode (event){
   let target = event.currentTarget.previousElementSibling.className;
-  // console.log(target);
+  console.log(target);
    if(target === "category_wrap"){
-    console.log(target);
+    // console.log(target);
     let arrOfKeys = Object.keys(variables).splice(1,8);
     let number = arrOfKeys.length; 
     let max= number-1;
     let min = 0;
    let random = Math.floor(Math.random() * (max - min + 1) + min);  
     let value =variables[arrOfKeys[random]];    
+    console.log(value);
     content.innerHTML ='';
     createCard(value);
     let children = content.childNodes;
@@ -856,42 +853,41 @@ function addAudio(event){
       element.classList.add(arrOfKeys[random]);
       let title = element.lastChild.lastChild;
       title.innerText ='';  
-      // createBtnStart();    
+      // createBtnStart(); 
+      // playSound(arr)   
     });
-    // let title = document.querySelector()
-    createBtnStart(); 
-  } else{
-    // btn.addEventListener('click',(event)=>{
-    //   console.log('hi');
-    // })
-    console.log(target);
-    let [value,key] = target.split(' ')
-    let arrOfKeys = variables[key];
-    // console.log(arrOfKeys);
-    let arrOfAudio = [];
-    
-    arrOfKeys.forEach((element) =>{
+    let newArr = [];
+    value.forEach((element) =>{
       let key = element.title;
       let value = element.audio;
       // let obj = {key:key,
       // audio:value}
       let obj = {[key]: value}
+      newArr.push(obj);
+    });
+    console.log(newArr);
+    let arrShake1 = shake (newArr);
+    playSound(arrShake1);  
+    
+  } else{ 
+    console.log(target);
+    let [value,key] = target.split(' ')
+    let arrOfKeys = variables[key];
+    
+    let arrOfAudio = [];
+    
+    arrOfKeys.forEach((element) =>{
+      let key = element.title;
+      let value = element.audio;     
+      let obj = {[key]: value}
       arrOfAudio.push(obj);
     });
     let btn = document.querySelector('.start_game');
-    let arrShake = shake (arrOfAudio);
-    // let btn = document.querySelector('.start_game');
-    // btn.addEventListener('click',(event)=>{
-    //   console.log('hi')
-    //   // playSound(arrShake);
-    // });
-    // console.log(arrShake);
-    // console.log('hi')
+    let arrShake = shake (arrOfAudio);   
     playSound(arrShake);
   }
-
  }
-// console.log(arrOfAudio)
+
 function shake (arr){
  let newArr = arr.sort(()=>Math.random()-0.5);
  return newArr;
@@ -908,26 +904,20 @@ function createBtnStart(){
     btnStarts.innerText = 'start game';
   } else{
     return;
-  }
-    
+  }  
 }
 let countCorrect = 0;
 let countWrong =0 ;
+let state ='';
 
 function playSound(arr){
   let length = arr.length;
+  // let field = document.querySelector('.answers');
+  // let wrongImg = createImg('wrong',"/assets/images/wrong.png");
+  // let correctImg = createImg('wrong',"/assets/images/right.png");
 let clickedValue ="";
 let index = 0;
-// let countCorrect = 0;
-// let countWrong =0 ;
-let name = playQue(index,length,arr,countCorrect,countWrong)
-// let element1 = arr[index];
-// let start = Object.entries(element1);
-// let name = start[0][0];
-// let sound = Object.values(element1)[0];
-// let track = new Audio(sound);
-// console.log(name);
-// track.play()
+let name = playQue(index,length,arr,countCorrect,countWrong);
 let currentGame = document.querySelectorAll('.category');
 currentGame.forEach((element) =>{
   element.removeEventListener('click',addAudio);
@@ -939,24 +929,48 @@ currentGame.forEach((element) =>{
     console.log(targetID)
     clickedValue = targetID;
     let result = new Promise(function(resolve,reject){
+      // let way1 = 
+      let right = new Audio("/assets/audio/correct.mp3");
+      let wrong = new Audio("/assets/audio/error.mp3")
       if(clickedValue === name){
       console.log(clickedValue);
-      target.classList.add('correct');
-      // target.removeEventListener();
+      target.classList.add('correct'); 
+      // target.removeEventListener('click',(event))  
       countCorrect++;
       index++;
+      let field = document.querySelector('#answers');
+      let correctImg = createImg('wrong',"/assets/images/right.png");
+      console.log(field)
+      field.append(correctImg);
+      right.play();      
       resolve();
       } else{
-        countWrong++;
+        countWrong++;        
+        // let target = event.currentTarget;
+        let field = document.querySelector('#answers');
+        console.log(field)
+        let wrongImg = createImg('wrong',"/assets/images/wrong.png");
+  
+        FRAGMENT.append(wrongImg)
+        field.append(FRAGMENT);  
+        console.log(field,'after')
+        wrong.play();
         console.log('((((((');
         // reject();
       }
     
 });
-result.then(()=>{
-  // console.log(countCorrect,'countCorrect')
-  // console.log(countWrong,'countWrong') 
+result.then(()=>{  
+  // name = setTimeout(playQue(index,length,arr,countCorrect,countWrong), 5000);
   name = playQue(index,length,arr,countCorrect,countWrong);
+  // playQue(index,length,arr,countCorrect,countWrong);
+}).then(()=>{
+  if(countWrong === 0 && state === "end"){
+    let content = document.querySelector('.content');
+    content.innerHTML = '';
+    let result = createImg('success','/assets/images/success.jpg');
+    content.append(result);
+  }
 })
 // console.log(countCorrect,'countCorrect')
 //   console.log(countWrong,'countWrong') 
@@ -973,20 +987,82 @@ result.then(()=>{
 
     function playQue(num,num1,arr,count,count1){
     if(num ===num1){
-      console.log('end');
+      state ='end';
       console.log(countCorrect,'countCorrect')
       console.log(countWrong,'countWrong')  
-      alert("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
+      // alert("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
+      // return status ='end';
+      if(countWrong === 0 && state === "end"){
+        let content = document.querySelector('.content');
+        let answers = document.querySelector('#answers');
+        answers.classList.add('end');
+        answers.innerHTML = '';
+        content.innerHTML = '';
+        let result = createImg('success','/assets/images/success.jpg');
+        let resultAudio = new Audio('/assets/audio/success.mp3');      
+        resultAudio.play();
+        content.append(result);
+        setTimeout(function(){
+          document.location.href = "";
+        },5000);
+      } else {
+        let content = document.querySelector('.content');
+        let answers = document.querySelector('#answers');
+        answers.classList.add('end');
+        answers.innerHTML = '';
+        content.innerHTML = '';
+        let result = createImg('failure','/assets/images/failure.jpg');
+        let resultFailure = new Audio('/assets/audio/failure.mp3');      
+        resultFailure.play();
+        content.append(result);
+        let alert = ("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
+        let h1 = createTitle('h2',alert);
+        content.append(h1);
+        setTimeout(function(){
+          document.location.href = "";
+        },5000);
+      }
     }else{
       let element1 = arr[num];
       console.log(element1,num)
       let start = Object.entries(element1);
       let name = start[0][0];
-      console.log(element1,name)
-      let sound = Object.values(element1)[0];
-      let track = new Audio(sound);
-      console.log(name);
+      console.log(element1,name);
+      let sound = Object.values(element1)[0];      
+      let track = new Audio(sound);      
       track.play();
       return name;
   }
+  
+    }
+
+    // function createAudio(sound){
+    //   let track = new Audio(sound);      
+    //   track.play();
+    // }
+
+    // function createAudio(sound){
+    //   let track = new Audio(sound);      
+    //   track.play();
+    // }
+
+    function createImg(alt,src){
+  // let imgWrap = document.createElement("div");
+  // imgWrap.classList.add("img_result");
+  let img = document.createElement("img");
+  img.setAttribute("src", src);
+  img.setAttribute("alt", alt);
+  // imgWrap.append(img);  
+  // console.log()
+  return img;
+  }
+
+  function createTitle(h,text){
+    let h2 = document.createElement(h);
+    h2.innerText = text;
+        return h2;
+    }
+
+    function returnMainPage(){
+      document.location.href = "";
     }

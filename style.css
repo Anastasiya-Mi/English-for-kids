@@ -18,6 +18,31 @@ img{
 a.disabled {
     pointer-events: none;
 }
+#answers{
+  border: 2px solid black;
+  height: 120px;
+  margin: 10px;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow-x: clip;
+  flex-wrap: nowrap;
+  gap: 15px;
+  /* overflow-y: hidden; */
+
+}
+#answers > img{
+  mix-width: 100px;
+}
+
+.correct{
+  opacity: 0;  
+
+}
+.end{
+  display: none;
+}
 /* body {
     font-family: sans-serif;
     min-width: 100%;
