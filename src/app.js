@@ -922,7 +922,7 @@ let currentGame = document.querySelectorAll('.category');
 currentGame.forEach((element) =>{
   element.removeEventListener('click',addAudio);
   element.removeEventListener('click',addButton);
-  element.addEventListener('click',(event)=>{
+  element.addEventListener('click',function chooseCard (event){
     let target = event.currentTarget;
     console.log(target);
     let targetID = event.currentTarget.dataset.id;
@@ -935,11 +935,12 @@ currentGame.forEach((element) =>{
       if(clickedValue === name){
       console.log(clickedValue);
       target.classList.add('correct'); 
-      // target.removeEventListener('click',(event))  
+      target.removeEventListener('click',chooseCard)  
       countCorrect++;
       index++;
       let field = document.querySelector('#answers');
-      let correctImg = createImg('wrong',"/assets/images/right.png");
+      let correctImg = createImg('right',"/assets/images/right.png");
+      clip();
       console.log(field)
       field.append(correctImg);
       right.play();      
@@ -950,7 +951,7 @@ currentGame.forEach((element) =>{
         let field = document.querySelector('#answers');
         console.log(field)
         let wrongImg = createImg('wrong',"/assets/images/wrong.png");
-  
+        clip();
         FRAGMENT.append(wrongImg)
         field.append(FRAGMENT);  
         console.log(field,'after')
@@ -1066,3 +1067,21 @@ result.then(()=>{
     function returnMainPage(){
       document.location.href = "";
     }
+
+function clip(){
+     let answContainer = document.querySelector("#answers");
+     let elements = answContainer.childNodes;
+     let value = elements.length;
+     let containerVolume = 5;
+     console.log(elements);
+     if (value > containerVolume){
+      elements[0].remove();
+     }
+    //  let value = answContainer.length;
+    //  console.log(value);
+}
+
+function createRepeatBtn (){
+  
+}
+    
