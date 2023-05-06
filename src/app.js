@@ -690,17 +690,8 @@ let alt = element.alt;
   let title = document.createElement("h3");
   title.innerText = attribute_name;  
   titleWrap.append(title);
-  // let back = document.createElement("div");
-  // back.classList.add("back");
-  // let titleWrapBack = document.createElement("div");  
-  // titleWrapBack.classList.add("title_wrap_back");
-  // let titleBack = document.createElement("h3");
-  // titleBack.innerText = titleRu; 
-  // titleWrapBack.append(titleBack);
-  // back.append(titleWrapBack)
   wrap.append(imgWrap);
-  wrap.append(titleWrap);
-  // wrap.append(back);
+  wrap.append(titleWrap); 
   return wrap;
 }
 createCard(variables.category);
@@ -724,13 +715,10 @@ link.forEach((element) =>{
 element.addEventListener("click", addButton); 
 })
   
-function addButton(event){
-  // event.preventDefault();
- 
+function addButton(event){ 
   let target = event.currentTarget;
         let text = target.textContent;
-        let value = variables[text];
-        // console.log(text);
+        let value = variables[text];        
         let content = document.querySelector(".content"); 
         content.innerHTML ='';
         createCard(value);
@@ -745,8 +733,7 @@ function addButton(event){
         });
       let category = document.querySelectorAll(".category");     
       category.forEach((element) =>{
-        let classValue = element.classList;
-        // console.log(classValue.length);
+        let classValue = element.classList;        
         if(classValue.length === 1){
           element.classList.add(text);
           element.addEventListener("click", addAudio);
@@ -758,9 +745,14 @@ function addButton(event){
 
 
 function addAudio(event){
+  // let category = document.querySelectorAll(".category"); 
+  // category.forEach((element) =>{    
+  //     element.EventListener("click", addAudio);   
+   
+  //   } )        
+  
   let target = event.currentTarget;
-  let target2 = event.target.tagName;
-  // console.log(target2);
+  let target2 = event.target.tagName;  
   let [value1,value] = target.className.split(' ');  
   let part = variables[value];
   let name = target.lastChild.firstChild.textContent;
@@ -782,7 +774,6 @@ function addAudio(event){
 }
 }
  let btn = document.querySelector('.state');
-//  console.log(btn)
 
  btn.addEventListener('click',changeMode);
 
@@ -817,12 +808,29 @@ function addAudio(event){
             event.preventDefault();
           }); 
           })
+
+
    } else{    
     let btnStartsGame= document.querySelector('.start_game');
-    console.log(btnStartsGame);
-    btnStartsGame.addEventListener("click", addPlayMode);
+    btnStartsGame.remove();
+    // btnStartsGame.addEventListener("click", addPlayMode);
     target.setAttribute('value','train');
     target.innerText = 'train';
+    let cards = document.querySelectorAll(".category");
+      cards.forEach((element)=>{
+        let titleWrap = document.createElement("div");  
+      titleWrap.classList.add("title_wrap");
+      let title = document.createElement("h3");
+      title.innerText = element.dataset.id;  
+      titleWrap.append(title);
+      let btn = createBtn();
+      titleWrap.append(btn);
+      element.append(titleWrap);
+      element.addEventListener("click", addAudio);
+      // let btn = createBtn();
+      // element.append(btn);
+             });         
+    
     categoryMain.forEach((element) => {
       element.addEventListener("click", addButton);
         });
@@ -830,61 +838,56 @@ function addAudio(event){
           element.addEventListener("click", addButton); 
           })
    }
-
  }
-//  let arrOfAudio =[]
 
  function addPlayMode (event){
-  let target = event.currentTarget.previousElementSibling.className;
-  console.log(target);
-   if(target === "category_wrap"){
-    // console.log(target);
+  let target = event.currentTarget.previousElementSibling.className;  
+   if(target === "category_wrap"){    
     let arrOfKeys = Object.keys(variables).splice(1,8);
     let number = arrOfKeys.length; 
     let max= number-1;
     let min = 0;
    let random = Math.floor(Math.random() * (max - min + 1) + min);  
-    let value =variables[arrOfKeys[random]];    
-    console.log(value);
+    let value =variables[arrOfKeys[random]];  
     content.innerHTML ='';
     createCard(value);
     let children = content.childNodes;
     children.forEach((element)=>{
       element.classList.add(arrOfKeys[random]);
       let title = element.lastChild.lastChild;
-      title.innerText ='';  
-      // createBtnStart(); 
-      // playSound(arr)   
-    });
+      title.innerText ='';       
+    });   
+    let repeatBtn = createRepeatBtn ();
+    content.append(repeatBtn);
+    
     let newArr = [];
     value.forEach((element) =>{
       let key = element.title;
-      let value = element.audio;
-      // let obj = {key:key,
-      // audio:value}
+      let value = element.audio;      
       let obj = {[key]: value}
       newArr.push(obj);
     });
-    console.log(newArr);
+    // console.log(newArr);
     let arrShake1 = shake (newArr);
     playSound(arrShake1);  
     
-  } else{ 
-    console.log(target);
+  } else{     
     let [value,key] = target.split(' ')
     let arrOfKeys = variables[key];
-    
-    let arrOfAudio = [];
-    
+        let arrOfAudio = [];    
     arrOfKeys.forEach((element) =>{
       let key = element.title;
       let value = element.audio;     
       let obj = {[key]: value}
       arrOfAudio.push(obj);
-    });
-    let btn = document.querySelector('.start_game');
+    });   
+    let repeatBtn = createRepeatBtn ();
+    content.append(repeatBtn);
+    let btnStartsGame= document.querySelector('.start_game');
+    btnStartsGame.remove();   
+    // event.currentTarget.innerText = 'repeat';
     let arrShake = shake (arrOfAudio);   
-    playSound(arrShake);
+    playSound(arrShake);   
   }
  }
 
@@ -911,10 +914,7 @@ let countWrong =0 ;
 let state ='';
 
 function playSound(arr){
-  let length = arr.length;
-  // let field = document.querySelector('.answers');
-  // let wrongImg = createImg('wrong',"/assets/images/wrong.png");
-  // let correctImg = createImg('wrong',"/assets/images/right.png");
+let length = arr.length;
 let clickedValue ="";
 let index = 0;
 let name = playQue(index,length,arr,countCorrect,countWrong);
@@ -947,7 +947,6 @@ currentGame.forEach((element) =>{
       resolve();
       } else{
         countWrong++;        
-        // let target = event.currentTarget;
         let field = document.querySelector('#answers');
         console.log(field)
         let wrongImg = createImg('wrong',"/assets/images/wrong.png");
@@ -956,15 +955,12 @@ currentGame.forEach((element) =>{
         field.append(FRAGMENT);  
         console.log(field,'after')
         wrong.play();
-        console.log('((((((');
-        // reject();
+        console.log('((((((');    
       }
     
 });
-result.then(()=>{  
-  // name = setTimeout(playQue(index,length,arr,countCorrect,countWrong), 5000);
-  name = playQue(index,length,arr,countCorrect,countWrong);
-  // playQue(index,length,arr,countCorrect,countWrong);
+result.then(()=>{    
+  name = playQue(index,length,arr,countCorrect,countWrong);  
 }).then(()=>{
   if(countWrong === 0 && state === "end"){
     let content = document.querySelector('.content');
@@ -972,27 +968,18 @@ result.then(()=>{
     let result = createImg('success','/assets/images/success.jpg');
     content.append(result);
   }
-})
-// console.log(countCorrect,'countCorrect')
-//   console.log(countWrong,'countWrong') 
+});
   });
-  // console.log(countCorrect,'countCorrect')
-  // console.log(countWrong,'countWrong') 
-  // alert("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
   });
 }
-//  alert("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
+
  
     
-
+let repeatTrack ='';
 
     function playQue(num,num1,arr,count,count1){
     if(num ===num1){
-      state ='end';
-      console.log(countCorrect,'countCorrect')
-      console.log(countWrong,'countWrong')  
-      // alert("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
-      // return status ='end';
+      state ='end';     
       if(countWrong === 0 && state === "end"){
         let content = document.querySelector('.content');
         let answers = document.querySelector('#answers');
@@ -1024,37 +1011,36 @@ result.then(()=>{
         },5000);
       }
     }else{
+      let btnRepeat = document.querySelector('.repeat');
       let element1 = arr[num];
       console.log(element1,num)
       let start = Object.entries(element1);
       let name = start[0][0];
       console.log(element1,name);
       let sound = Object.values(element1)[0];      
-      let track = new Audio(sound);      
+      let track = new Audio(sound); 
+      console.log(track,'do igry')             
       track.play();
+      repeatTrack= track;
+      console.log(repeatTrack);
+      // let divContent = document.querySelector('.content');
+      // divContent.addEventListener('click',(event)=>{
+      //   let target = event.target.tagName;
+      //   console.log(target);
+      // })
+      // console.log(btnRepeat) ;
+      btnRepeat.addEventListener('click',(event)=>{
+        repeatTrack.play();      
+      });   
       return name;
   }
   
     }
 
-    // function createAudio(sound){
-    //   let track = new Audio(sound);      
-    //   track.play();
-    // }
-
-    // function createAudio(sound){
-    //   let track = new Audio(sound);      
-    //   track.play();
-    // }
-
     function createImg(alt,src){
-  // let imgWrap = document.createElement("div");
-  // imgWrap.classList.add("img_result");
   let img = document.createElement("img");
   img.setAttribute("src", src);
   img.setAttribute("alt", alt);
-  // imgWrap.append(img);  
-  // console.log()
   return img;
   }
 
@@ -1076,12 +1062,15 @@ function clip(){
      console.log(elements);
      if (value > containerVolume){
       elements[0].remove();
-     }
-    //  let value = answContainer.length;
-    //  console.log(value);
+     }    
 }
 
 function createRepeatBtn (){
-  
+let btn = document.createElement("button");
+btn.classList.add('repeat');
+btn.innerText = "repeat";
+return btn;
 }
-    
+ function repeat (value){
+  value.play();
+ }
