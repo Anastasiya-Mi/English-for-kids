@@ -1226,6 +1226,7 @@ function createStatsPage(event) {
   content.prepend(btnRepeat);
 
   btnReset.addEventListener("click", resetData);
+  btnRepeat.addEventListener("click", createCardsForRepeat);
 }
 
 
@@ -1248,6 +1249,63 @@ function resetData (event){
   createTable(heading, statistis);  
 }
 
+function createCardsForRepeat(event){
+  let head = document.querySelector("thead");
+  let body = document.querySelector("tbody"); 
+  let column_marks = head.children[5];
+  console.log(column_marks);
+  let rows = body.children;  
+ let result =[];
+ for(let i=0;i<[...rows].length;i++){
+let a = Number([...rows][i].lastChild.innerText);
+if(a>0&&a<100){
+  result.push([...rows][i]);
+}
+ }
+
+let value = [...result].sort((firstValue,secondValue)=> ((Number(firstValue.lastChild.innerText) < Number(secondValue.lastChild.innerText))?-1:1));
+let length = [...value].length-1;
+console.log(length,'length')
+let maxCardsForRepeat = 8;
+// let newCard = [];
+if(length > maxCardsForRepeat){
+newCard = [...value].slice(0,maxCardsForRepeat);
+console.log(newCard);
+} else if(length < maxCardsForRepeat){
+ newCard = [...value];
+}
+let newArr = [];
+for(let i=0;i<[...newCard].length;i++){
+  let a = [...newCard][i].firstChild.innerText;  
+  newArr.push(a);
+  }
+  console.log(newArr);
+  let result2 = [];  
+  for (let key in variables) {
+  let value = variables[key];
+  // console.log(value);
+  for (let i = 0; i < value.length; i++) {   
+  let title = value[i]["title"];  
+  for(let k =0;k<newArr.length;k++){
+    if(title === newArr[k]){
+      result2.push(value[i]);
+    }
+  }
+}
+}
+// console.log(result2);
+result2.forEach((element)=>{
+  // console.log(element)
+ let div = createElement(element);
+ let btn = createBtn();
+ div.append(btn);
+ FRAGMENT.append(div);
+ content.append(FRAGMENT);
+//  console.log(div)
+})
+// createElement(element)
+// content.innerText ='';
+}
 
 function createBtnReset() {
   let btn = document.createElement("button");
@@ -1262,9 +1320,6 @@ function createBtnRepeat() {
   return btn;
 }
 
-// let btnReset = document.querySelector('.reset')
-
-// btnReset.addEventListener("click", createStatsPage);
 function sortTable(table) {
   // получаем голову
   let head = table.tHead;
