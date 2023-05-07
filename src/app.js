@@ -705,6 +705,8 @@ let link = document.querySelectorAll("a");
 link.forEach((element) =>{
 element.addEventListener("click", addButton); 
 });
+let statsPage = document.querySelector('#nine');
+statsPage.removeEventListener("click", addButton);
 
 
   
@@ -851,6 +853,7 @@ function addAudio(event){
         });
         link.forEach((element) =>{          
           element.addEventListener("click", addButton); 
+          statsPage.removeEventListener("click", addButton);
           })
    }
  }
@@ -1091,7 +1094,71 @@ return btn;
  function repeat (value){
   value.play();
  }
+ let heading = ['word','translate','clicked in train mode','guessed in play mode','mistakes in play mode','percentage of correct answers']
 
- let statsPage = document.querySelector('#nine');
  statsPage.addEventListener('click',createStatsPage)
-// console.log(statistis)
+
+function createTable(arr1,arr){
+  let table_wrap = document.createElement('table');
+  let tableHead = document.createElement('thead');  
+  for(let i =0;i<heading.length;i++){
+    let tableHeadTh = document.createElement('th');
+    tableHeadTh.setAttribute('scope','col');
+    tableHeadTh.innerText = heading[i];
+    tableHead.append(tableHeadTh);
+  }
+  let tableBody = document.createElement('tbody');  
+  let words = [];
+  for(let key in arr){
+    let value = arr[key];
+    let tr = createTr(value);
+    tableBody.append(tr);  
+  } 
+  table_wrap.append(tableHead);
+  table_wrap.append(tableBody);
+  FRAGMENT.append(table_wrap);
+  content.append(FRAGMENT);
+
+}
+
+
+ function getPercatage(num1,num2){
+  const persante = 100;
+  let sum = num1 + num2;  
+  let partOfCorrect = num1 * persante;  
+  if(!(sum ===0)){
+    let result = partOfCorrect/sum;  
+  return result;
+  } else {
+    result = '-';
+    return result;
+  }  
+ }
+
+ function createTr(value){
+  let arrEmpty = []; 
+  let title = value['title'];
+  let titleRu = value['titleRu'];
+  let numberOfRepetitions = value['numberOfRepetitions'];
+  let numberOfGuessing = value['numberOfGuessing'];
+  let numberOfMistakes = value['numberOfMistakes'];
+  let progreess = getPercatage(numberOfGuessing,numberOfMistakes);    
+  arrEmpty.push(title,titleRu,numberOfRepetitions,numberOfGuessing,numberOfMistakes,progreess);
+  let tableTr= document.createElement('tr');  
+  for(let i =0;i<arrEmpty.length;i++){
+    let tableTd= document.createElement('td');
+    tableTd.innerText = arrEmpty[i];
+    tableTr.append(tableTd);
+  }  
+  return tableTr;
+ }
+ 
+  function createStatsPage(event){  
+    event.preventDefault();
+    let data = JSON.parse(localStorage.getItem('statistis'));    
+    createTable(heading,data);   
+
+  }
+
+
+  
