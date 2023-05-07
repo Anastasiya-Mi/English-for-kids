@@ -736,7 +736,34 @@ function addButton(event) {
   });
 }
 
-let numberOfRepetitions = 0;
+// let numberOfRepetitions = 0;
+// let numberOfMistakes = 0;
+// let numberOfGuessing = 0;
+// let progress = (numberOfGuessing * 100) / (numberOfMistakes + numberOfGuessing);
+// let statistis = {};
+
+// for (let key in variables) {
+//   let value = variables[key];
+//   for (let i = 0; i < value.length; i++) {
+//     let wrap_name = value[i]["wrap_name"];
+//     if (!(wrap_name === "category_wrap")) {
+//       let title = value[i]["title"];
+//       let titleRu = value[i]["titleRu"];
+//       statistis[title] = {
+//         title: title,
+//         titleRu: titleRu,
+//         numberOfRepetitions: numberOfRepetitions,
+//         numberOfMistakes: numberOfMistakes,
+//         numberOfGuessing: numberOfGuessing,
+//         progreess: 0,
+//       };
+//     }
+//   }
+// }
+let statistis  = JSON.parse(localStorage.getItem("statistis"));
+// console.log(localStorageItem)
+if( statistis === null){
+  let numberOfRepetitions = 0;
 let numberOfMistakes = 0;
 let numberOfGuessing = 0;
 let progress = (numberOfGuessing * 100) / (numberOfMistakes + numberOfGuessing);
@@ -760,7 +787,10 @@ for (let key in variables) {
     }
   }
 }
+  localStorage.setItem("statistis", JSON.stringify(statistis));
+}
 
+// localStorage.setItem("statistis", JSON.stringify(statistis));
 function addAudio(event) {
   let target = event.currentTarget;
   console.log(target);
@@ -926,9 +956,11 @@ function createBtnStart() {
 let countCorrect = 0;
 let countWrong = 0;
 let state = "";
-
+statistis = JSON.parse(localStorage.getItem("statistis"));
+// console.log(statistis);
 function playSound(arr) {
   statistis = JSON.parse(localStorage.getItem("statistis"));
+  console.log(statistis);
   let length = arr.length;
   let clickedValue = "";
   let index = 0;
