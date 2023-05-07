@@ -763,7 +763,7 @@ function addButton(event) {
 let statistis  = JSON.parse(localStorage.getItem("statistis"));
 // console.log(localStorageItem)
 if( statistis === null){
-  let numberOfRepetitions = 0;
+let numberOfRepetitions = 0;
 let numberOfMistakes = 0;
 let numberOfGuessing = 0;
 let progress = (numberOfGuessing * 100) / (numberOfMistakes + numberOfGuessing);
@@ -1048,9 +1048,15 @@ function playQue(num, num1, arr, count, count1) {
       let resultAudio = new Audio("/assets/audio/success.mp3");
       resultAudio.play();
       content.append(result);
+      statsPage.removeEventListener("click", addButton);
+      statsPage.addEventListener("click", (event)=>{
+      event.preventDefault();
+      });
+        statsPage.removeEventListener("click", createStatsPage);
       setTimeout(function () {
         document.location.href = "";
-      }, 5000);
+      }, 3000);
+   
     } else {
       let content = document.querySelector(".content");
       let answers = document.querySelector("#answers");
@@ -1065,9 +1071,14 @@ function playQue(num, num1, arr, count, count1) {
         "Правильно" + `${countCorrect}` + "неправильно" + `${countWrong}`;
       let h1 = createTitle("h2", alert);
       content.append(h1);
+      statsPage.removeEventListener("click", addButton);
+      statsPage.addEventListener("click", (event)=>{
+      event.preventDefault();
+      });
+        statsPage.removeEventListener("click", createStatsPage);
       setTimeout(function () {
         document.location.href = "";
-      }, 5000);
+      }, 3000);
     }
   } else {
     let btnRepeat = document.querySelector(".repeat");
@@ -1084,6 +1095,10 @@ function playQue(num, num1, arr, count, count1) {
     console.log(repeatTrack);
     btnRepeat.addEventListener("click", (event) => {
       repeatTrack.play();
+    });
+    statsPage.removeEventListener("click", addButton);
+    statsPage.addEventListener("click", (event)=>{
+    event.preventDefault();
     });
     return name;
   }
@@ -1203,8 +1218,53 @@ function createStatsPage(event) {
   createTable(heading, data);
   let table = document.querySelector("table");
   sortTable(table);
+  let btnReset = createBtnReset();
+  FRAGMENT.append(btnReset);
+  content.prepend(btnReset);
+  let btnRepeat = createBtnRepeat();
+  FRAGMENT.prepend(btnRepeat);
+  content.prepend(btnRepeat);
+
+  btnReset.addEventListener("click", resetData);
 }
 
+
+
+function resetData (event){
+  let statistis = JSON.parse(localStorage.getItem("statistis"));
+  for(let key in statistis){
+    // console.log(key)
+    // let value = data[key];
+    let zero = 0;
+    statistis[key]['numberOfRepetitions'] = 0;
+    // console.log(statistis[key]['numberOfRepetitions'])
+    statistis[key]['numberOfMistakes'] = 0;
+    statistis[key]['numberOfGuessing'] = 0;
+    statistis[key]['progress'] = 0;
+  }
+  localStorage.setItem("statistis", JSON.stringify(statistis));
+  statistis = JSON.parse(localStorage.getItem("statistis"));
+  content.lastChild.remove();
+  createTable(heading, statistis);  
+}
+
+
+function createBtnReset() {
+  let btn = document.createElement("button");
+  btn.classList.add("reset");
+  btn.innerText = "reset";
+  return btn;
+}
+function createBtnRepeat() {
+  let btn = document.createElement("button");
+  btn.classList.add("repeat");
+  btn.innerText = "repeat difficult word";
+  return btn;
+}
+
+// let btnReset = document.querySelector('.reset')
+
+// btnReset.addEventListener("click", createStatsPage);
 function sortTable(table) {
   // получаем голову
   let head = table.tHead;
