@@ -655,8 +655,7 @@ let variables = {
   ],
 };
 
-function createCard(value) {
-  // console.log(value)
+function createCard(value) { 
   let content = document.querySelector(".content");
   value.forEach((element) => {
   let divCard = createElement(element);
@@ -702,18 +701,12 @@ categoryMain.forEach((element) => {
 element.addEventListener("click", addButton);
 });
 
-function lookForCategory(variabels, id) {
-  for (key in variabels) {
-    if (key === id) {
-      return variables[key];
-    }
-  }
-};
-
 let link = document.querySelectorAll("a");
 link.forEach((element) =>{
 element.addEventListener("click", addButton); 
-})
+});
+
+
   
 function addButton(event){ 
   let target = event.currentTarget;
@@ -736,28 +729,55 @@ function addButton(event){
         let classValue = element.classList;        
         if(classValue.length === 1){
           element.classList.add(text);
-          element.addEventListener("click", addAudio);
+          element.addEventListener("click", addAudio);          
         } else{
           element.addEventListener("click", addAudio)
         }        
 });          
 };
 
+let numberOfRepetitions = 0;
+let numberOfMistakes = 0;
+let numberOfGuessing = 0;
+let progress = (numberOfGuessing*100)/(numberOfMistakes +numberOfGuessing);
+let statistis = {};
 
-function addAudio(event){
-  // let category = document.querySelectorAll(".category"); 
-  // category.forEach((element) =>{    
-  //     element.EventListener("click", addAudio);   
-   
-  //   } )        
+for(let key in variables){
+  let value = variables[key];
+  for(let i = 0; i<value.length;i++){
+    let wrap_name = value[i]['wrap_name']; 
+   if(!(wrap_name === "category_wrap")){
+    let title = value[i]['title']; 
+    let titleRu = value[i]['titleRu'];     
+    statistis[title] ={'title':title,
+    'titleRu':titleRu,
+    'numberOfRepetitions':numberOfRepetitions,
+    'numberOfMistakes':numberOfMistakes,
+    'numberOfGuessing': numberOfGuessing,
+    'progreess':0,
+    };  
+   };     
+  };
+}
+
+
+function addAudio(event){       
   
   let target = event.currentTarget;
+  console.log(target)
   let target2 = event.target.tagName;  
   let [value1,value] = target.className.split(' ');  
   let part = variables[value];
+  console.log(part)
   let name = target.lastChild.firstChild.textContent;
   let obj = part.find(elem => elem.title === name);
-  let url = obj.audio;
+  let url = obj.audio; 
+  /////////////////////////////////
+  let numberOfRepet = statistis[name]['numberOfRepetitions'];
+  numberOfRepet++;
+  statistis[name]['numberOfRepetitions'] = numberOfRepet;  
+  console.log(numberOfRepet);
+  /////////////////////////////////////////////
   let audio = new Audio(url);  
   if(target2 != "BUTTON"){  
   audio.play();
@@ -788,14 +808,12 @@ function addAudio(event){
     console.log(page)
     if (!(page === "category_wrap")){
       let cards = document.querySelectorAll(".category");
-      cards.forEach((element)=>{
-        // element.lastChild.firstChild.innerHTML = '';
+      cards.forEach((element)=>{        
         element.lastChild.innerHTML = '';
         element.removeEventListener('click',addAudio);
         element.removeEventListener('click',addButton);
       })
-    }
-    // console.log(place)
+    }  
     createBtnStart();    
     let btnStartsGame= document.querySelector('.start_game');
     btnStartsGame.addEventListener("click", addPlayMode);
@@ -812,8 +830,7 @@ function addAudio(event){
 
    } else{    
     let btnStartsGame= document.querySelector('.start_game');
-    btnStartsGame.remove();
-    // btnStartsGame.addEventListener("click", addPlayMode);
+    btnStartsGame.remove(); 
     target.setAttribute('value','train');
     target.innerText = 'train';
     let cards = document.querySelectorAll(".category");
@@ -826,9 +843,7 @@ function addAudio(event){
       let btn = createBtn();
       titleWrap.append(btn);
       element.append(titleWrap);
-      element.addEventListener("click", addAudio);
-      // let btn = createBtn();
-      // element.append(btn);
+      element.addEventListener("click", addAudio);     
              });         
     
     categoryMain.forEach((element) => {
@@ -858,16 +873,14 @@ function addAudio(event){
       title.innerText ='';       
     });   
     let repeatBtn = createRepeatBtn ();
-    content.append(repeatBtn);
-    
+    content.append(repeatBtn);    
     let newArr = [];
     value.forEach((element) =>{
       let key = element.title;
       let value = element.audio;      
       let obj = {[key]: value}
       newArr.push(obj);
-    });
-    // console.log(newArr);
+    }); 
     let arrShake1 = shake (newArr);
     playSound(arrShake1);  
     
@@ -884,8 +897,7 @@ function addAudio(event){
     let repeatBtn = createRepeatBtn ();
     content.append(repeatBtn);
     let btnStartsGame= document.querySelector('.start_game');
-    btnStartsGame.remove();   
-    // event.currentTarget.innerText = 'repeat';
+    btnStartsGame.remove();      
     let arrShake = shake (arrOfAudio);   
     playSound(arrShake);   
   }
@@ -928,12 +940,16 @@ currentGame.forEach((element) =>{
     let targetID = event.currentTarget.dataset.id;
     console.log(targetID)
     clickedValue = targetID;
-    let result = new Promise(function(resolve,reject){
-      // let way1 = 
+    let result = new Promise(function(resolve,reject){    
       let right = new Audio("/assets/audio/correct.mp3");
       let wrong = new Audio("/assets/audio/error.mp3")
       if(clickedValue === name){
+
       console.log(clickedValue);
+      let numberOfGues = statistis[clickedValue]['numberOfGuessing']; 
+      numberOfGues++;
+      statistis[clickedValue]['numberOfGuessing'] = numberOfGues; 
+      console.log(statistis[clickedValue]);
       target.classList.add('correct'); 
       target.removeEventListener('click',chooseCard)  
       countCorrect++;
@@ -943,19 +959,26 @@ currentGame.forEach((element) =>{
       clip();
       console.log(field)
       field.append(correctImg);
-      right.play();      
+      right.play(); 
+      localStorage.setItem('statistis', JSON.stringify(statistis));
       resolve();
       } else{
-        countWrong++;        
+        if(clickedValue != name){
+        let numberOfMist = statistis[name]['numberOfMistakes'];
+        numberOfMist++;
+        statistis[name]['numberOfMistakes'] = numberOfMist;
+      } 
+        countWrong++;   
         let field = document.querySelector('#answers');
         console.log(field)
         let wrongImg = createImg('wrong',"/assets/images/wrong.png");
         clip();
         FRAGMENT.append(wrongImg)
-        field.append(FRAGMENT);  
-        console.log(field,'after')
+        field.append(FRAGMENT);       
         wrong.play();
-        console.log('((((((');    
+        console.log('(((((('); 
+        localStorage.setItem('statistis', JSON.stringify(statistis));
+        // console.log(statistis[name]);   
       }
     
 });
@@ -1022,13 +1045,7 @@ let repeatTrack ='';
       console.log(track,'do igry')             
       track.play();
       repeatTrack= track;
-      console.log(repeatTrack);
-      // let divContent = document.querySelector('.content');
-      // divContent.addEventListener('click',(event)=>{
-      //   let target = event.target.tagName;
-      //   console.log(target);
-      // })
-      // console.log(btnRepeat) ;
+      console.log(repeatTrack);     
       btnRepeat.addEventListener('click',(event)=>{
         repeatTrack.play();      
       });   
@@ -1074,3 +1091,7 @@ return btn;
  function repeat (value){
   value.play();
  }
+
+ let statsPage = document.querySelector('#nine');
+ statsPage.addEventListener('click',createStatsPage)
+// console.log(statistis)
