@@ -65,38 +65,38 @@ let variables = {
     {
       wrap_name: "category",
       title: "cry",
-      titleRu: "Плакать",
+      titleRu: "плакать",
       imageLink: "/assets/images/action/cry.jpg",
       alt: "girl crying",
       attribute_name: "cry",
-      audio:'/assets/audio/action/cry.mp3'
+      audio: "/assets/audio/action/cry.mp3",
     },
     {
       wrap_name: "category",
       title: "fly",
-      titleRu: "Летать",
+      titleRu: "летать",
       imageLink: "/assets/images/action/fly.jpg",
       alt: "duck fly",
       attribute_name: "fly",
-      audio:'/assets/audio/action/fly.mp3'
+      audio: "/assets/audio/action/fly.mp3",
     },
     {
       wrap_name: "category",
       title: "hug",
-      titleRu: "Обнимать",
+      titleRu: "обнимать",
       imageLink: "/assets/images/action/hug.jpg",
       alt: "girl hug bear",
       attribute_name: "hug",
-      audio:'/assets/audio/action/hug.mp3'
+      audio: "/assets/audio/action/hug.mp3",
     },
     {
       wrap_name: "category",
       title: "jump",
-      titleRu: "Прыгать",
+      titleRu: "прыгать",
       imageLink: "/assets/images/action/jump.jpg",
       alt: "kids jump",
       attribute_name: "jump",
-      audio:'/assets/audio/action/jump.mp3'
+      audio: "/assets/audio/action/jump.mp3",
     },
     {
       wrap_name: "category",
@@ -105,7 +105,7 @@ let variables = {
       alt: "women laugh",
       imageLink: "/assets/images/action/laugh.jpg",
       attribute_name: "laugh",
-      audio:'/assets/audio/action/laugh.mp3'
+      audio: "/assets/audio/action/laugh.mp3",
     },
     {
       wrap_name: "category",
@@ -114,7 +114,7 @@ let variables = {
       alt: "kid open door",
       imageLink: "/assets/images/action/open.jpg",
       attribute_name: "open",
-      audio:'/assets/audio/action/open.mp3'
+      audio: "/assets/audio/action/open.mp3",
     },
     {
       wrap_name: "category",
@@ -123,7 +123,7 @@ let variables = {
       imageLink: "/assets/images/action/point.jpg",
       alt: "girl pointing her finger",
       attribute_name: "point",
-      audio:'/assets/audio/action/point.mp3'
+      audio: "/assets/audio/action/point.mp3",
     },
     {
       wrap_name: "category",
@@ -132,7 +132,7 @@ let variables = {
       imageLink: "/assets/images/action/smile.jpg",
       alt: "girl smile",
       attribute_name: "smile",
-      audio:'/assets/audio/action/smile.mp3'
+      audio: "/assets/audio/action/smile.mp3",
     },
   ],
   animals: [
@@ -143,7 +143,7 @@ let variables = {
       imageLink: "/assets/images/animals/bear.jpg",
       alt: "bear",
       attribute_name: "bear",
-      audio: "/assets/audio/animals/bear.mp3"
+      audio: "/assets/audio/animals/bear.mp3",
     },
     {
       wrap_name: "category",
@@ -152,7 +152,7 @@ let variables = {
       imageLink: "/assets/images/animals/dolphin.jpg",
       alt: "dolphin",
       attribute_name: "dolphin",
-      audio: "/assets/audio/animals/dolphin.mp3"
+      audio: "/assets/audio/animals/dolphin.mp3",
     },
     {
       wrap_name: "category",
@@ -161,7 +161,7 @@ let variables = {
       imageLink: "/assets/images/animals/elephant.jpg",
       alt: "elephant",
       attribute_name: "elephant",
-      audio: "/assets/audio/animals/elephant.mp3"
+      audio: "/assets/audio/animals/elephant.mp3",
     },
     {
       wrap_name: "category",
@@ -170,7 +170,7 @@ let variables = {
       imageLink: "/assets/images/animals/frog.jpg",
       alt: "frog",
       attribute_name: "frog",
-      audio: "/assets/audio/animals/frog.mp3"
+      audio: "/assets/audio/animals/frog.mp3",
     },
     {
       wrap_name: "category",
@@ -179,7 +179,7 @@ let variables = {
       alt: "giraffe",
       imageLink: "/assets/images/animals/giraffe.jpg",
       attribute_name: "giraffe",
-      audio: "/assets/audio/animals/giraffe.mp3"
+      audio: "/assets/audio/animals/giraffe.mp3",
     },
     {
       wrap_name: "category",
@@ -188,7 +188,7 @@ let variables = {
       alt: "lion",
       imageLink: "/assets/images/animals/lion.jpg",
       attribute_name: "lion",
-      audio: "/assets/audio/animals/lion.mp3"
+      audio: "/assets/audio/animals/lion.mp3",
     },
     {
       wrap_name: "category",
@@ -197,7 +197,7 @@ let variables = {
       imageLink: "/assets/images/animals/pig.jpg",
       alt: "pig",
       attribute_name: "pig",
-      audio: "/assets/audio/animals/pig.mp3"
+      audio: "/assets/audio/animals/pig.mp3",
     },
     {
       wrap_name: "category",
@@ -206,7 +206,7 @@ let variables = {
       imageLink: "/assets/images/animals/wolf.jpg",
       alt: "wolf",
       attribute_name: "wolf",
-      audio: "/assets/audio/animals/wolf.mp3"
+      audio: "/assets/audio/animals/wolf.mp3",
     },
   ],
   birds: [
@@ -217,7 +217,7 @@ let variables = {
       imageLink: "/assets/images/birds/chick.jpg",
       alt: "chick",
       attribute_name: "chick",
-      audio:"/assets/audio/birds/chick.mp3"
+      audio: "/assets/audio/birds/chick.mp3",
     },
     {
       wrap_name: "category",
@@ -226,7 +226,7 @@ let variables = {
       imageLink: "/assets/images/birds/chicken.jpg",
       alt: "chicken",
       attribute_name: "chicken",
-      audio:"/assets/audio/birds/chicken.mp3"
+      audio: "/assets/audio/birds/chicken.mp3",
     },
     {
       wrap_name: "category",
@@ -235,7 +235,7 @@ let variables = {
       imageLink: "/assets/images/birds/flamingos.jpg",
       alt: "flamingo",
       attribute_name: "flamingo",
-      audio:"/assets/audio/birds/flamingo.mp3"
+      audio: "/assets/audio/birds/flamingo.mp3",
     },
     {
       wrap_name: "category",
@@ -244,7 +244,7 @@ let variables = {
       imageLink: "/assets/images/birds/owl.jpg",
       alt: "owl",
       attribute_name: "owl",
-      audio:"/assets/audio/birds/owl.mp3"
+      audio: "/assets/audio/birds/owl.mp3",
     },
     {
       wrap_name: "category",
@@ -253,7 +253,7 @@ let variables = {
       alt: "parrot",
       imageLink: "/assets/images/birds/parrot.jpg",
       attribute_name: "parrot",
-      audio:"/assets/audio/birds/parrot.mp3"
+      audio: "/assets/audio/birds/parrot.mp3",
     },
     {
       wrap_name: "category",
@@ -262,7 +262,7 @@ let variables = {
       alt: "pigeon",
       imageLink: "/assets/images/birds/pigeon.jpg",
       attribute_name: "pigeon",
-      audio:"/assets/audio/birds/pigeon.mp3"
+      audio: "/assets/audio/birds/pigeon.mp3",
     },
     {
       wrap_name: "category",
@@ -271,7 +271,7 @@ let variables = {
       imageLink: "/assets/images/birds/raven.jpg",
       alt: "raven",
       attribute_name: "raven",
-      audio:"/assets/audio/birds/raven.mp3"
+      audio: "/assets/audio/birds/raven.mp3",
     },
     {
       wrap_name: "category",
@@ -280,7 +280,7 @@ let variables = {
       imageLink: "/assets/images/birds/tit.jpg",
       alt: "tit",
       attribute_name: "tit",
-      audio:"/assets/audio/birds/tit.mp3"
+      audio: "/assets/audio/birds/tit.mp3",
     },
   ],
   cloth: [
@@ -291,7 +291,7 @@ let variables = {
       imageLink: "/assets/images/cloth/blouse.jpg",
       alt: "blouse",
       attribute_name: "blouse",
-      audio:"/assets/audio/cloth/blouse.mp3"
+      audio: "/assets/audio/cloth/blouse.mp3",
     },
     {
       wrap_name: "category",
@@ -300,7 +300,7 @@ let variables = {
       imageLink: "/assets/images/cloth/boot.jpg",
       alt: "boot",
       attribute_name: "boot",
-      audio:"/assets/audio/cloth/boot.mp3"
+      audio: "/assets/audio/cloth/boot.mp3",
     },
     {
       wrap_name: "category",
@@ -309,7 +309,7 @@ let variables = {
       imageLink: "/assets/images/cloth/coat.jpg",
       alt: "coat",
       attribute_name: "coat",
-      audio:"/assets/audio/cloth/coat.mp3"
+      audio: "/assets/audio/cloth/coat.mp3",
     },
     {
       wrap_name: "category",
@@ -318,7 +318,7 @@ let variables = {
       imageLink: "/assets/images/cloth/dress.jpg",
       alt: "dress",
       attribute_name: "dress",
-      audio:"/assets/audio/cloth/dress.mp3"
+      audio: "/assets/audio/cloth/dress.mp3",
     },
     {
       wrap_name: "category",
@@ -327,7 +327,7 @@ let variables = {
       alt: "pants",
       imageLink: "/assets/images/cloth/pants.jpg",
       attribute_name: "pants",
-      audio:"/assets/audio/cloth/pants.mp3"
+      audio: "/assets/audio/cloth/pants.mp3",
     },
     {
       wrap_name: "category",
@@ -336,7 +336,7 @@ let variables = {
       alt: "shirt",
       imageLink: "/assets/images/cloth/shirt.jpg",
       attribute_name: "shirt",
-      audio:"/assets/audio/cloth/shirt.mp3"
+      audio: "/assets/audio/cloth/shirt.mp3",
     },
     {
       wrap_name: "category",
@@ -345,7 +345,7 @@ let variables = {
       imageLink: "/assets/images/cloth/shoe.jpg",
       alt: "shoe",
       attribute_name: "shoe",
-      audio:"/assets/audio/cloth/shoe.mp3"
+      audio: "/assets/audio/cloth/shoe.mp3",
     },
     {
       wrap_name: "category",
@@ -354,7 +354,7 @@ let variables = {
       imageLink: "/assets/images/cloth/skirt.jpg",
       alt: "skirt",
       attribute_name: "skirt",
-      audio:"/assets/audio/cloth/skirt.mp3"
+      audio: "/assets/audio/cloth/skirt.mp3",
     },
   ],
   emotions: [
@@ -365,7 +365,7 @@ let variables = {
       imageLink: "/assets/images/emotions/angry.jpg",
       alt: "angry",
       attribute_name: "angry",
-      audio:"/assets/audio/emotions/angry.mp3"
+      audio: "/assets/audio/emotions/angry.mp3",
     },
     {
       wrap_name: "category",
@@ -374,7 +374,7 @@ let variables = {
       imageLink: "/assets/images/emotions/happy.jpg",
       alt: "happy",
       attribute_name: "happy",
-      audio:"/assets/audio/emotions/happy.mp3"
+      audio: "/assets/audio/emotions/happy.mp3",
     },
     {
       wrap_name: "category",
@@ -383,7 +383,7 @@ let variables = {
       imageLink: "/assets/images/emotions/pride.jpg",
       alt: "pride",
       attribute_name: "pride",
-      audio:"/assets/audio/emotions/pride.mp3"
+      audio: "/assets/audio/emotions/pride.mp3",
     },
     {
       wrap_name: "category",
@@ -392,7 +392,7 @@ let variables = {
       imageLink: "/assets/images/emotions/sad.jpg",
       alt: "sad",
       attribute_name: "sad",
-      audio:"/assets/audio/emotions/sad.mp3"
+      audio: "/assets/audio/emotions/sad.mp3",
     },
     {
       wrap_name: "category",
@@ -401,7 +401,7 @@ let variables = {
       alt: "scared",
       imageLink: "/assets/images/emotions/scared.jpg",
       attribute_name: "scared",
-      audio:"/assets/audio/emotions/scared.mp3"
+      audio: "/assets/audio/emotions/scared.mp3",
     },
     {
       wrap_name: "category",
@@ -410,7 +410,7 @@ let variables = {
       alt: "surprised",
       imageLink: "/assets/images/emotions/surprised.jpg",
       attribute_name: "surprised",
-      audio:"/assets/audio/emotions/surprised.mp3"
+      audio: "/assets/audio/emotions/surprised.mp3",
     },
     {
       wrap_name: "category",
@@ -419,7 +419,7 @@ let variables = {
       imageLink: "/assets/images/emotions/tired.jpg",
       alt: "tired",
       attribute_name: "tired",
-      audio:"/assets/audio/emotions/tired.mp3"
+      audio: "/assets/audio/emotions/tired.mp3",
     },
     {
       wrap_name: "category",
@@ -428,7 +428,7 @@ let variables = {
       imageLink: "/assets/images/emotions/worried.jpg",
       alt: "worried",
       attribute_name: "worried",
-      audio:"/assets/audio/emotions/worried.mp3"
+      audio: "/assets/audio/emotions/worried.mp3",
     },
   ],
   hobby: [
@@ -439,7 +439,7 @@ let variables = {
       imageLink: "/assets/images/hobby/coding.jpg",
       alt: "coding",
       attribute_name: "coding",
-      audio:"/assets/audio/hobby/coding.mp3"
+      audio: "/assets/audio/hobby/coding.mp3",
     },
     {
       wrap_name: "category",
@@ -448,7 +448,7 @@ let variables = {
       imageLink: "/assets/images/hobby/dance.jpg",
       alt: "girl and boy dancing",
       attribute_name: "dance",
-      audio:"/assets/audio/hobby/dance.mp3"
+      audio: "/assets/audio/hobby/dance.mp3",
     },
     {
       wrap_name: "category",
@@ -457,7 +457,7 @@ let variables = {
       imageLink: "/assets/images/hobby/draw.jpg",
       alt: "girl drawing",
       attribute_name: "draw",
-      audio:"/assets/audio/hobby/draw.mp3"
+      audio: "/assets/audio/hobby/draw.mp3",
     },
     {
       wrap_name: "category",
@@ -466,7 +466,7 @@ let variables = {
       imageLink: "/assets/images/hobby/photography.jpg",
       alt: "girl takes photo",
       attribute_name: "photography",
-      audio:"/assets/audio/hobby/photography.mp3"
+      audio: "/assets/audio/hobby/photography.mp3",
     },
     {
       wrap_name: "category",
@@ -475,7 +475,7 @@ let variables = {
       alt: "kids playing",
       imageLink: "/assets/images/hobby/play.jpg",
       attribute_name: "play",
-      audio:"/assets/audio/hobby/play.mp3"
+      audio: "/assets/audio/hobby/play.mp3",
     },
     {
       wrap_name: "category",
@@ -484,7 +484,7 @@ let variables = {
       alt: "children reading book",
       imageLink: "/assets/images/hobby/reading.jpg",
       attribute_name: "reading",
-      audio:"/assets/audio/hobby/reading.mp3"
+      audio: "/assets/audio/hobby/reading.mp3",
     },
     {
       wrap_name: "category",
@@ -493,7 +493,7 @@ let variables = {
       imageLink: "/assets/images/hobby/sing.jpg",
       alt: "girl is singing",
       attribute_name: "sing",
-      audio:"/assets/audio/hobby/sing.mp3"
+      audio: "/assets/audio/hobby/sing.mp3",
     },
     {
       wrap_name: "category",
@@ -502,7 +502,7 @@ let variables = {
       imageLink: "/assets/images/hobby/travel.jpg",
       alt: "boy lies on the suitcase",
       attribute_name: "travel",
-      audio:"/assets/audio/hobby/travel.mp3"
+      audio: "/assets/audio/hobby/travel.mp3",
     },
   ],
   pets: [
@@ -513,7 +513,7 @@ let variables = {
       imageLink: "/assets/images/pets/cat.jpg",
       alt: "cat",
       attribute_name: "cat",
-      audio:"/assets/audio/pets/cat.mp3"
+      audio: "/assets/audio/pets/cat.mp3",
     },
     {
       wrap_name: "category",
@@ -522,7 +522,7 @@ let variables = {
       imageLink: "/assets/images/pets/dog.jpg",
       alt: "dog",
       attribute_name: "dog",
-      audio:"/assets/audio/pets/dog.mp3"
+      audio: "/assets/audio/pets/dog.mp3",
     },
     {
       wrap_name: "category",
@@ -531,7 +531,7 @@ let variables = {
       imageLink: "/assets/images/pets/fish.jpg",
       alt: "fish",
       attribute_name: "fish",
-      audio:"/assets/audio/pets/fish.mp3"
+      audio: "/assets/audio/pets/fish.mp3",
     },
     {
       wrap_name: "category",
@@ -540,7 +540,7 @@ let variables = {
       imageLink: "/assets/images/pets/horse.jpg",
       alt: "horse",
       attribute_name: "horse",
-      audio:"/assets/audio/pets/horse.mp3"
+      audio: "/assets/audio/pets/horse.mp3",
     },
     {
       wrap_name: "category",
@@ -549,7 +549,7 @@ let variables = {
       alt: "mouse",
       imageLink: "/assets/images/pets/mouse.jpg",
       attribute_name: "mouse",
-      audio:"/assets/audio/pets/mouse.mp3"
+      audio: "/assets/audio/pets/mouse.mp3",
     },
     {
       wrap_name: "category",
@@ -558,7 +558,7 @@ let variables = {
       alt: "rabbit",
       imageLink: "/assets/images/pets/rabbit.jpg",
       attribute_name: "rabbit",
-      audio:"/assets/audio/pets/rabbit.mp3"
+      audio: "/assets/audio/pets/rabbit.mp3",
     },
     {
       wrap_name: "category",
@@ -567,7 +567,7 @@ let variables = {
       imageLink: "/assets/images/pets/sheep.jpg",
       alt: "sheep",
       attribute_name: "sheep",
-      audio:"/assets/audio/pets/sheep.mp3"
+      audio: "/assets/audio/pets/sheep.mp3",
     },
     {
       wrap_name: "category",
@@ -576,7 +576,7 @@ let variables = {
       imageLink: "/assets/images/pets/turtle.jpg",
       alt: "turtle",
       attribute_name: "turtle",
-      audio:"/assets/audio/pets/turtle.mp3"
+      audio: "/assets/audio/pets/turtle.mp3",
     },
   ],
   sport: [
@@ -587,7 +587,7 @@ let variables = {
       imageLink: "/assets/images/sport/dive.jpg",
       alt: "dive",
       attribute_name: "dive",
-      audio:"/assets/audio/sport/dive.mp3"
+      audio: "/assets/audio/sport/dive.mp3",
     },
     {
       wrap_name: "category",
@@ -596,7 +596,7 @@ let variables = {
       imageLink: "/assets/images/sport/fish.jpg",
       alt: "fish",
       attribute_name: "fish",
-      audio:"/assets/audio/sport/fish.mp3"
+      audio: "/assets/audio/sport/fish.mp3",
     },
     {
       wrap_name: "category",
@@ -605,7 +605,7 @@ let variables = {
       imageLink: "/assets/images/sport/ride.jpg",
       alt: "ride",
       attribute_name: "ride",
-      audio:"/assets/audio/sport/ride.mp3"
+      audio: "/assets/audio/sport/ride.mp3",
     },
     {
       wrap_name: "category",
@@ -614,7 +614,7 @@ let variables = {
       imageLink: "/assets/images/sport/run.jpg",
       alt: "run",
       attribute_name: "run",
-      audio:"/assets/audio/sport/run.mp3"
+      audio: "/assets/audio/sport/run.mp3",
     },
     {
       wrap_name: "category",
@@ -623,7 +623,7 @@ let variables = {
       alt: "skating",
       imageLink: "/assets/images/sport/skating.jpg",
       attribute_name: "skating",
-      audio:"/assets/audio/sport/skating.mp3"
+      audio: "/assets/audio/sport/skating.mp3",
     },
     {
       wrap_name: "category",
@@ -632,7 +632,7 @@ let variables = {
       alt: "skiing",
       imageLink: "/assets/images/sport/skiing.jpg",
       attribute_name: "skiing",
-      audio:"/assets/audio/sport/skiing.mp3"
+      audio: "/assets/audio/sport/skiing.mp3",
     },
     {
       wrap_name: "category",
@@ -641,7 +641,7 @@ let variables = {
       imageLink: "/assets/images/sport/skip.jpg",
       alt: "skip",
       attribute_name: "skip",
-      audio:"/assets/audio/sport/skip.mp3"
+      audio: "/assets/audio/sport/skip.mp3",
     },
     {
       wrap_name: "category",
@@ -650,31 +650,31 @@ let variables = {
       imageLink: "/assets/images/sport/swim.jpg",
       alt: "swim",
       attribute_name: "swim",
-      audio: '/assets/audio/sport/swim.mp3'      
+      audio: "/assets/audio/sport/swim.mp3",
     },
   ],
 };
 
-function createCard(value) { 
+function createCard(value) {
   let content = document.querySelector(".content");
   value.forEach((element) => {
-  let divCard = createElement(element);
-  FRAGMENT.append(divCard);
+    let divCard = createElement(element);
+    FRAGMENT.append(divCard);
   });
   content.prepend(FRAGMENT);
 }
 
-function createBtn(){
-let btn = document.createElement("button");
-btn.classList.add('push');
-btn.innerText = "push";
-return btn;
+function createBtn() {
+  let btn = document.createElement("button");
+  btn.classList.add("push");
+  btn.innerText = "push";
+  return btn;
 }
 function createElement(element) {
-let wrap_name = element.wrap_name;    
-let attribute_name = element.attribute_name;
-let imageLink = element.imageLink;
-let alt = element.alt;
+  let wrap_name = element.wrap_name;
+  let attribute_name = element.attribute_name;
+  let imageLink = element.imageLink;
+  let alt = element.alt;
   let wrap = document.createElement("div");
   wrap.classList.add(wrap_name);
   wrap.dataset.id = attribute_name;
@@ -684,13 +684,13 @@ let alt = element.alt;
   img.setAttribute("src", imageLink);
   img.setAttribute("alt", alt);
   imgWrap.append(img);
-  let titleWrap = document.createElement("div");  
+  let titleWrap = document.createElement("div");
   titleWrap.classList.add("title_wrap");
   let title = document.createElement("h3");
-  title.innerText = attribute_name;  
+  title.innerText = attribute_name;
   titleWrap.append(title);
   wrap.append(imgWrap);
-  wrap.append(titleWrap); 
+  wrap.append(titleWrap);
   return wrap;
 }
 createCard(variables.category);
@@ -698,467 +698,540 @@ createCard(variables.category);
 let categoryMain = document.querySelectorAll(".category_wrap");
 
 categoryMain.forEach((element) => {
-element.addEventListener("click", addButton);
+  element.addEventListener("click", addButton);
 });
 
 let link = document.querySelectorAll("a");
-link.forEach((element) =>{
-element.addEventListener("click", addButton); 
+link.forEach((element) => {
+  element.addEventListener("click", addButton);
 });
-let statsPage = document.querySelector('#nine');
+let statsPage = document.querySelector("#nine");
 statsPage.removeEventListener("click", addButton);
 
-
-  
-function addButton(event){ 
+function addButton(event) {
   let target = event.currentTarget;
-        let text = target.textContent;
-        let value = variables[text];        
-        let content = document.querySelector(".content"); 
-        content.innerHTML ='';
-        createCard(value);
+  let text = target.textContent;
+  let value = variables[text];
+  let content = document.querySelector(".content");
+  content.innerHTML = "";
+  createCard(value);
   let titleWrap = document.querySelectorAll(".category > .title_wrap");
-        titleWrap.forEach((element)=>{        
-            let child = element.lastChild;        
-            let value1 = child.tagName;
-            if(!(value1 === 'BUTTON')){            
-                let btn = createBtn();                
-                element.append(btn); 
-            }
-        });
-      let category = document.querySelectorAll(".category");     
-      category.forEach((element) =>{
-        let classValue = element.classList;        
-        if(classValue.length === 1){
-          element.classList.add(text);
-          element.addEventListener("click", addAudio);          
-        } else{
-          element.addEventListener("click", addAudio)
-        }        
-});          
-};
+  titleWrap.forEach((element) => {
+    let child = element.lastChild;
+    let value1 = child.tagName;
+    if (!(value1 === "BUTTON")) {
+      let btn = createBtn();
+      element.append(btn);
+    }
+  });
+  let category = document.querySelectorAll(".category");
+  category.forEach((element) => {
+    let classValue = element.classList;
+    if (classValue.length === 1) {
+      element.classList.add(text);
+      element.addEventListener("click", addAudio);
+    } else {
+      element.addEventListener("click", addAudio);
+    }
+  });
+}
 
 let numberOfRepetitions = 0;
 let numberOfMistakes = 0;
 let numberOfGuessing = 0;
-let progress = (numberOfGuessing*100)/(numberOfMistakes +numberOfGuessing);
+let progress = (numberOfGuessing * 100) / (numberOfMistakes + numberOfGuessing);
 let statistis = {};
 
-for(let key in variables){
+for (let key in variables) {
   let value = variables[key];
-  for(let i = 0; i<value.length;i++){
-    let wrap_name = value[i]['wrap_name']; 
-   if(!(wrap_name === "category_wrap")){
-    let title = value[i]['title']; 
-    let titleRu = value[i]['titleRu'];     
-    statistis[title] ={'title':title,
-    'titleRu':titleRu,
-    'numberOfRepetitions':numberOfRepetitions,
-    'numberOfMistakes':numberOfMistakes,
-    'numberOfGuessing': numberOfGuessing,
-    'progreess':0,
-    };  
-   };     
-  };
+  for (let i = 0; i < value.length; i++) {
+    let wrap_name = value[i]["wrap_name"];
+    if (!(wrap_name === "category_wrap")) {
+      let title = value[i]["title"];
+      let titleRu = value[i]["titleRu"];
+      statistis[title] = {
+        title: title,
+        titleRu: titleRu,
+        numberOfRepetitions: numberOfRepetitions,
+        numberOfMistakes: numberOfMistakes,
+        numberOfGuessing: numberOfGuessing,
+        progreess: 0,
+      };
+    }
+  }
 }
 
-
-function addAudio(event){       
-  
+function addAudio(event) {
   let target = event.currentTarget;
-  console.log(target)
-  let target2 = event.target.tagName;  
-  let [value1,value] = target.className.split(' ');  
+  console.log(target);
+  let target2 = event.target.tagName;
+  let [value1, value] = target.className.split(" ");
   let part = variables[value];
-  console.log(part)
+  console.log(part);
   let name = target.lastChild.firstChild.textContent;
-  let obj = part.find(elem => elem.title === name);
-  let url = obj.audio; 
+  let obj = part.find((elem) => elem.title === name);
+  let url = obj.audio;
   /////////////////////////////////
-  let numberOfRepet = statistis[name]['numberOfRepetitions'];
+  // statistis = JSON.parse(localStorage.getItem("statistis")); 
+  // console.log(Object.keys(statistis)) 
+  let numberOfRepet = statistis[name]["numberOfRepetitions"];
   numberOfRepet++;
-  statistis[name]['numberOfRepetitions'] = numberOfRepet;  
+  statistis[name]["numberOfRepetitions"] = numberOfRepet;
+  localStorage.setItem("statistis", JSON.stringify(statistis));
   console.log(numberOfRepet);
+  
   /////////////////////////////////////////////
-  let audio = new Audio(url);  
-  if(target2 != "BUTTON"){  
-  audio.play();
-  audio.addEventListener("playing",(event) => {
-    let category = document.querySelectorAll(".category");
-    category.forEach((element) =>{
-    element.removeEventListener("click", addAudio)});
-  });
-  audio.addEventListener("ended",(event) => {
-    let category = document.querySelectorAll(".category");
-    category.forEach((element) =>{
-      element.addEventListener("click", addAudio)});
-  });
+  let audio = new Audio(url);
+  if (target2 != "BUTTON") {
+    audio.play();
+    audio.addEventListener("playing", (event) => {
+      let category = document.querySelectorAll(".category");
+      category.forEach((element) => {
+        element.removeEventListener("click", addAudio);
+      });
+    });
+    audio.addEventListener("ended", (event) => {
+      let category = document.querySelectorAll(".category");
+      category.forEach((element) => {
+        element.addEventListener("click", addAudio);
+      });
+    });
+  }
 }
-}
- let btn = document.querySelector('.state');
+let btn = document.querySelector(".state");
 
- btn.addEventListener('click',changeMode);
+btn.addEventListener("click", changeMode);
 
-
- function changeMode(event){
+function changeMode(event) {
   let target = event.currentTarget;
-  let state = target.getAttribute('value')
-   if (state === 'train'){    
-    target.setAttribute('value','play');
-    target.innerText = 'play';
-    let [value,page] = content.firstElementChild.className.split(' ');
-    console.log(page)
-    if (!(page === "category_wrap")){
+  let state = target.getAttribute("value");
+  if (state === "train") {
+    target.setAttribute("value", "play");
+    target.innerText = "play";
+    let [value, page] = content.firstElementChild.className.split(" ");
+    console.log(page);
+    if (!(page === "category_wrap")) {
       let cards = document.querySelectorAll(".category");
-      cards.forEach((element)=>{        
-        element.lastChild.innerHTML = '';
-        element.removeEventListener('click',addAudio);
-        element.removeEventListener('click',addButton);
-      })
-    }  
-    createBtnStart();    
-    let btnStartsGame= document.querySelector('.start_game');
+      cards.forEach((element) => {
+        element.lastChild.innerHTML = "";
+        element.removeEventListener("click", addAudio);
+        element.removeEventListener("click", addButton);
+      });
+    }
+    createBtnStart();
+    let btnStartsGame = document.querySelector(".start_game");
     btnStartsGame.addEventListener("click", addPlayMode);
     categoryMain.forEach((element) => {
       element.removeEventListener("click", addButton);
-        });
-        link.forEach((element) =>{
-          element.removeEventListener("click", addButton); 
-          element.addEventListener("click", (event)=>{
-            event.preventDefault();
-          }); 
-          })
-
-
-   } else{    
-    let btnStartsGame= document.querySelector('.start_game');
-    btnStartsGame.remove(); 
-    target.setAttribute('value','train');
-    target.innerText = 'train';
+    });
+    link.forEach((element) => {
+      element.removeEventListener("click", addButton);
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+      });
+    });
+  } else {
+    let btnStartsGame = document.querySelector(".start_game");
+    btnStartsGame.remove();
+    target.setAttribute("value", "train");
+    target.innerText = "train";
     let cards = document.querySelectorAll(".category");
-      cards.forEach((element)=>{
-        let titleWrap = document.createElement("div");  
+    cards.forEach((element) => {
+      let titleWrap = document.createElement("div");
       titleWrap.classList.add("title_wrap");
       let title = document.createElement("h3");
-      title.innerText = element.dataset.id;  
+      title.innerText = element.dataset.id;
       titleWrap.append(title);
       let btn = createBtn();
       titleWrap.append(btn);
       element.append(titleWrap);
-      element.addEventListener("click", addAudio);     
-             });         
-    
+      element.addEventListener("click", addAudio);
+    });
+
     categoryMain.forEach((element) => {
       element.addEventListener("click", addButton);
-        });
-        link.forEach((element) =>{          
-          element.addEventListener("click", addButton); 
-          statsPage.removeEventListener("click", addButton);
-          })
-   }
- }
+    });
+    link.forEach((element) => {
+      element.addEventListener("click", addButton);
+      statsPage.removeEventListener("click", addButton);
+    });
+  }
+}
 
- function addPlayMode (event){
-  let target = event.currentTarget.previousElementSibling.className;  
-   if(target === "category_wrap"){    
-    let arrOfKeys = Object.keys(variables).splice(1,8);
-    let number = arrOfKeys.length; 
-    let max= number-1;
+function addPlayMode(event) {
+  let target = event.currentTarget.previousElementSibling.className;
+  if (target === "category_wrap") {
+    let arrOfKeys = Object.keys(variables).splice(1, 8);
+    let number = arrOfKeys.length;
+    let max = number - 1;
     let min = 0;
-   let random = Math.floor(Math.random() * (max - min + 1) + min);  
-    let value =variables[arrOfKeys[random]];  
-    content.innerHTML ='';
+    let random = Math.floor(Math.random() * (max - min + 1) + min);
+    let value = variables[arrOfKeys[random]];
+    content.innerHTML = "";
     createCard(value);
     let children = content.childNodes;
-    children.forEach((element)=>{
+    children.forEach((element) => {
       element.classList.add(arrOfKeys[random]);
       let title = element.lastChild.lastChild;
-      title.innerText ='';       
-    });   
-    let repeatBtn = createRepeatBtn ();
-    content.append(repeatBtn);    
-    let newArr = [];
-    value.forEach((element) =>{
-      let key = element.title;
-      let value = element.audio;      
-      let obj = {[key]: value}
-      newArr.push(obj);
-    }); 
-    let arrShake1 = shake (newArr);
-    playSound(arrShake1);  
-    
-  } else{     
-    let [value,key] = target.split(' ')
-    let arrOfKeys = variables[key];
-        let arrOfAudio = [];    
-    arrOfKeys.forEach((element) =>{
-      let key = element.title;
-      let value = element.audio;     
-      let obj = {[key]: value}
-      arrOfAudio.push(obj);
-    });   
-    let repeatBtn = createRepeatBtn ();
+      title.innerText = "";
+    });
+    let repeatBtn = createRepeatBtn();
     content.append(repeatBtn);
-    let btnStartsGame= document.querySelector('.start_game');
-    btnStartsGame.remove();      
-    let arrShake = shake (arrOfAudio);   
-    playSound(arrShake);   
+    let newArr = [];
+    value.forEach((element) => {
+      let key = element.title;
+      let value = element.audio;
+      let obj = { [key]: value };
+      newArr.push(obj);
+    });
+    let arrShake1 = shake(newArr);
+    playSound(arrShake1);
+  } else {
+    let [value, key] = target.split(" ");
+    let arrOfKeys = variables[key];
+    let arrOfAudio = [];
+    arrOfKeys.forEach((element) => {
+      let key = element.title;
+      let value = element.audio;
+      let obj = { [key]: value };
+      arrOfAudio.push(obj);
+    });
+    let repeatBtn = createRepeatBtn();
+    content.append(repeatBtn);
+    let btnStartsGame = document.querySelector(".start_game");
+    btnStartsGame.remove();
+    let arrShake = shake(arrOfAudio);
+    playSound(arrShake);
   }
- }
-
-function shake (arr){
- let newArr = arr.sort(()=>Math.random()-0.5);
- return newArr;
 }
 
-function createBtnStart(){
-  let btnStarts= document.querySelector('.start_game');  
-  if(btnStarts === null){
+function shake(arr) {
+  let newArr = arr.sort(() => Math.random() - 0.5);
+  return newArr;
+}
+
+function createBtnStart() {
+  let btnStarts = document.querySelector(".start_game");
+  if (btnStarts === null) {
     let btnStart = createBtn();
     content.append(btnStart);
-    let btnStarts= document.querySelector('.content >.push');
-    btnStarts.classList.remove('push');
-    btnStarts.classList.add('start_game');
-    btnStarts.innerText = 'start game';
-  } else{
+    let btnStarts = document.querySelector(".content >.push");
+    btnStarts.classList.remove("push");
+    btnStarts.classList.add("start_game");
+    btnStarts.innerText = "start game";
+  } else {
     return;
-  }  
+  }
 }
 let countCorrect = 0;
-let countWrong =0 ;
-let state ='';
+let countWrong = 0;
+let state = "";
 
-function playSound(arr){
-let length = arr.length;
-let clickedValue ="";
-let index = 0;
-let name = playQue(index,length,arr,countCorrect,countWrong);
-let currentGame = document.querySelectorAll('.category');
-currentGame.forEach((element) =>{
-  element.removeEventListener('click',addAudio);
-  element.removeEventListener('click',addButton);
-  element.addEventListener('click',function chooseCard (event){
-    let target = event.currentTarget;
-    console.log(target);
-    let targetID = event.currentTarget.dataset.id;
-    console.log(targetID)
-    clickedValue = targetID;
-    let result = new Promise(function(resolve,reject){    
-      let right = new Audio("/assets/audio/correct.mp3");
-      let wrong = new Audio("/assets/audio/error.mp3")
-      if(clickedValue === name){
-
-      console.log(clickedValue);
-      let numberOfGues = statistis[clickedValue]['numberOfGuessing']; 
-      numberOfGues++;
-      statistis[clickedValue]['numberOfGuessing'] = numberOfGues; 
-      console.log(statistis[clickedValue]);
-      target.classList.add('correct'); 
-      target.removeEventListener('click',chooseCard)  
-      countCorrect++;
-      index++;
-      let field = document.querySelector('#answers');
-      let correctImg = createImg('right',"/assets/images/right.png");
-      clip();
-      console.log(field)
-      field.append(correctImg);
-      right.play(); 
-      localStorage.setItem('statistis', JSON.stringify(statistis));
-      resolve();
-      } else{
-        if(clickedValue != name){
-        let numberOfMist = statistis[name]['numberOfMistakes'];
-        numberOfMist++;
-        statistis[name]['numberOfMistakes'] = numberOfMist;
-      } 
-        countWrong++;   
-        let field = document.querySelector('#answers');
-        console.log(field)
-        let wrongImg = createImg('wrong',"/assets/images/wrong.png");
-        clip();
-        FRAGMENT.append(wrongImg)
-        field.append(FRAGMENT);       
-        wrong.play();
-        console.log('(((((('); 
-        localStorage.setItem('statistis', JSON.stringify(statistis));
-        // console.log(statistis[name]);   
-      }
-    
-});
-result.then(()=>{    
-  name = playQue(index,length,arr,countCorrect,countWrong);  
-}).then(()=>{
-  if(countWrong === 0 && state === "end"){
-    let content = document.querySelector('.content');
-    content.innerHTML = '';
-    let result = createImg('success','/assets/images/success.jpg');
-    content.append(result);
-  }
-});
-  });
+function playSound(arr) {
+  statistis = JSON.parse(localStorage.getItem("statistis"));
+  let length = arr.length;
+  let clickedValue = "";
+  let index = 0;
+  let name = playQue(index, length, arr, countCorrect, countWrong);
+  let currentGame = document.querySelectorAll(".category");
+  currentGame.forEach((element) => {
+    element.removeEventListener("click", addAudio);
+    element.removeEventListener("click", addButton);
+    element.addEventListener("click", function chooseCard(event) {
+      let target = event.currentTarget;
+      console.log(target);
+      let targetID = event.currentTarget.dataset.id;
+      console.log(targetID);
+      clickedValue = targetID;
+      let result = new Promise(function (resolve, reject) {
+        let right = new Audio("/assets/audio/correct.mp3");
+        let wrong = new Audio("/assets/audio/error.mp3");
+        if (clickedValue === name) {
+          console.log(clickedValue);
+          let numberOfGues = statistis[clickedValue]["numberOfGuessing"];
+          numberOfGues++;
+          statistis[clickedValue]["numberOfGuessing"] = numberOfGues;
+          console.log(statistis[clickedValue]);
+          target.classList.add("correct");
+          target.removeEventListener("click", chooseCard);
+          countCorrect++;
+          index++;
+          let field = document.querySelector("#answers");
+          let correctImg = createImg("right", "/assets/images/right.png");
+          clip();
+          console.log(field);
+          field.append(correctImg);
+          right.play();
+          // localStorage.setItem("statistis", JSON.stringify(statistis));
+          resolve();
+        } else {
+          if (clickedValue != name) {
+            let numberOfMist = statistis[name]["numberOfMistakes"];
+            numberOfMist++;
+            statistis[name]["numberOfMistakes"] = numberOfMist;
+            // localStorage.setItem("statistis", JSON.stringify(statistis));
+          }
+          countWrong++;
+          let field = document.querySelector("#answers");
+          console.log(field);
+          let wrongImg = createImg("wrong", "/assets/images/wrong.png");
+          clip();
+          FRAGMENT.append(wrongImg);
+          field.append(FRAGMENT);
+          wrong.play();
+          console.log("((((((");
+          // localStorage.setItem("statistis", JSON.stringify(statistis));
+          // console.log(statistis[name]);
+        }
+      });
+      result
+        .then(() => {
+          name = playQue(index, length, arr, countCorrect, countWrong);
+          localStorage.setItem("statistis", JSON.stringify(statistis));
+        })
+        .then(() => {
+          if (countWrong === 0 && state === "end") {
+            let content = document.querySelector(".content");
+            content.innerHTML = "";
+            let result = createImg("success", "/assets/images/success.jpg");
+            content.append(result);
+          }
+        });
+    });
   });
 }
 
- 
-    
-let repeatTrack ='';
+let repeatTrack = "";
 
-    function playQue(num,num1,arr,count,count1){
-    if(num ===num1){
-      state ='end';     
-      if(countWrong === 0 && state === "end"){
-        let content = document.querySelector('.content');
-        let answers = document.querySelector('#answers');
-        answers.classList.add('end');
-        answers.innerHTML = '';
-        content.innerHTML = '';
-        let result = createImg('success','/assets/images/success.jpg');
-        let resultAudio = new Audio('/assets/audio/success.mp3');      
-        resultAudio.play();
-        content.append(result);
-        setTimeout(function(){
-          document.location.href = "";
-        },5000);
-      } else {
-        let content = document.querySelector('.content');
-        let answers = document.querySelector('#answers');
-        answers.classList.add('end');
-        answers.innerHTML = '';
-        content.innerHTML = '';
-        let result = createImg('failure','/assets/images/failure.jpg');
-        let resultFailure = new Audio('/assets/audio/failure.mp3');      
-        resultFailure.play();
-        content.append(result);
-        let alert = ("Правильно" + `${countCorrect}` + 'неправильно' + `${countWrong}`);
-        let h1 = createTitle('h2',alert);
-        content.append(h1);
-        setTimeout(function(){
-          document.location.href = "";
-        },5000);
-      }
-    }else{
-      let btnRepeat = document.querySelector('.repeat');
-      let element1 = arr[num];
-      console.log(element1,num)
-      let start = Object.entries(element1);
-      let name = start[0][0];
-      console.log(element1,name);
-      let sound = Object.values(element1)[0];      
-      let track = new Audio(sound); 
-      console.log(track,'do igry')             
-      track.play();
-      repeatTrack= track;
-      console.log(repeatTrack);     
-      btnRepeat.addEventListener('click',(event)=>{
-        repeatTrack.play();      
-      });   
-      return name;
-  }
-  
+function playQue(num, num1, arr, count, count1) {
+  if (num === num1) {
+    state = "end";
+    if (countWrong === 0 && state === "end") {
+      let content = document.querySelector(".content");
+      let answers = document.querySelector("#answers");
+      answers.classList.add("end");
+      answers.innerHTML = "";
+      content.innerHTML = "";
+      let result = createImg("success", "/assets/images/success.jpg");
+      let resultAudio = new Audio("/assets/audio/success.mp3");
+      resultAudio.play();
+      content.append(result);
+      setTimeout(function () {
+        document.location.href = "";
+      }, 5000);
+    } else {
+      let content = document.querySelector(".content");
+      let answers = document.querySelector("#answers");
+      answers.classList.add("end");
+      answers.innerHTML = "";
+      content.innerHTML = "";
+      let result = createImg("failure", "/assets/images/failure.jpg");
+      let resultFailure = new Audio("/assets/audio/failure.mp3");
+      resultFailure.play();
+      content.append(result);
+      let alert =
+        "Правильно" + `${countCorrect}` + "неправильно" + `${countWrong}`;
+      let h1 = createTitle("h2", alert);
+      content.append(h1);
+      setTimeout(function () {
+        document.location.href = "";
+      }, 5000);
     }
+  } else {
+    let btnRepeat = document.querySelector(".repeat");
+    let element1 = arr[num];
+    console.log(element1, num);
+    let start = Object.entries(element1);
+    let name = start[0][0];
+    console.log(element1, name);
+    let sound = Object.values(element1)[0];
+    let track = new Audio(sound);
+    console.log(track, "do igry");
+    track.play();
+    repeatTrack = track;
+    console.log(repeatTrack);
+    btnRepeat.addEventListener("click", (event) => {
+      repeatTrack.play();
+    });
+    return name;
+  }
+}
 
-    function createImg(alt,src){
+function createImg(alt, src) {
   let img = document.createElement("img");
   img.setAttribute("src", src);
   img.setAttribute("alt", alt);
   return img;
+}
+
+function createTitle(h, text) {
+  let h2 = document.createElement(h);
+  h2.innerText = text;
+  return h2;
+}
+
+function returnMainPage() {
+  document.location.href = "";
+}
+
+function clip() {
+  let answContainer = document.querySelector("#answers");
+  let elements = answContainer.childNodes;
+  let value = elements.length;
+  let containerVolume = 5;
+  console.log(elements);
+  if (value > containerVolume) {
+    elements[0].remove();
   }
-
-  function createTitle(h,text){
-    let h2 = document.createElement(h);
-    h2.innerText = text;
-        return h2;
-    }
-
-    function returnMainPage(){
-      document.location.href = "";
-    }
-
-function clip(){
-     let answContainer = document.querySelector("#answers");
-     let elements = answContainer.childNodes;
-     let value = elements.length;
-     let containerVolume = 5;
-     console.log(elements);
-     if (value > containerVolume){
-      elements[0].remove();
-     }    
 }
 
-function createRepeatBtn (){
-let btn = document.createElement("button");
-btn.classList.add('repeat');
-btn.innerText = "repeat";
-return btn;
+function createRepeatBtn() {
+  let btn = document.createElement("button");
+  btn.classList.add("repeat");
+  btn.innerText = "repeat";
+  return btn;
 }
- function repeat (value){
+function repeat(value) {
   value.play();
- }
- let heading = ['word','translate','clicked in train mode','guessed in play mode','mistakes in play mode','percentage of correct answers']
+}
+let heading = [
+  "word",
+  "translate",
+  "clicked in train mode",
+  "guessed in play mode",
+  "mistakes in play mode",
+  "percentage of correct answers",
+];
 
- statsPage.addEventListener('click',createStatsPage)
+statsPage.addEventListener("click", createStatsPage);
 
-function createTable(arr1,arr){
-  let table_wrap = document.createElement('table');
-  let tableHead = document.createElement('thead');  
-  for(let i =0;i<heading.length;i++){
-    let tableHeadTh = document.createElement('th');
-    tableHeadTh.setAttribute('scope','col');
+function createTable(arr1, arr) {
+  let table_wrap = document.createElement("table");
+  let tableHead = document.createElement("thead");
+  for (let i = 0; i < heading.length; i++) {
+    let tableHeadTh = document.createElement("th");
+    tableHeadTh.setAttribute("scope", "col");
     tableHeadTh.innerText = heading[i];
     tableHead.append(tableHeadTh);
   }
-  let tableBody = document.createElement('tbody');  
+  let tableBody = document.createElement("tbody");
   let words = [];
-  for(let key in arr){
+  for (let key in arr) {
     let value = arr[key];
     let tr = createTr(value);
-    tableBody.append(tr);  
-  } 
+    tableBody.append(tr);
+  }
   table_wrap.append(tableHead);
   table_wrap.append(tableBody);
   FRAGMENT.append(table_wrap);
   content.append(FRAGMENT);
-
 }
 
-
- function getPercatage(num1,num2){
+function getPercatage(num1, num2) {
   const persante = 100;
-  let sum = num1 + num2;  
-  let partOfCorrect = num1 * persante;  
-  if(!(sum ===0)){
-    let result = partOfCorrect/sum;  
-  return result;
+  let sum = num1 + num2;
+  let partOfCorrect = num1 * persante;
+  if (!(sum === 0)) {
+    let result = partOfCorrect / sum;
+    return result.toFixed(2);
   } else {
-    result = '-';
+    result = 0;
     return result;
-  }  
- }
+  }
+}
 
- function createTr(value){
-  let arrEmpty = []; 
-  let title = value['title'];
-  let titleRu = value['titleRu'];
-  let numberOfRepetitions = value['numberOfRepetitions'];
-  let numberOfGuessing = value['numberOfGuessing'];
-  let numberOfMistakes = value['numberOfMistakes'];
-  let progreess = getPercatage(numberOfGuessing,numberOfMistakes);    
-  arrEmpty.push(title,titleRu,numberOfRepetitions,numberOfGuessing,numberOfMistakes,progreess);
-  let tableTr= document.createElement('tr');  
-  for(let i =0;i<arrEmpty.length;i++){
-    let tableTd= document.createElement('td');
+function createTr(value) {
+  let arrEmpty = [];
+  let title = value["title"];
+  let titleRu = value["titleRu"];
+  let numberOfRepetitions = value["numberOfRepetitions"];
+  let numberOfGuessing = value["numberOfGuessing"];
+  let numberOfMistakes = value["numberOfMistakes"];
+  let progreess = getPercatage(numberOfGuessing, numberOfMistakes);
+  arrEmpty.push(
+    title,
+    titleRu,
+    numberOfRepetitions,
+    numberOfGuessing,
+    numberOfMistakes,
+    progreess
+  );
+  let tableTr = document.createElement("tr");
+  for (let i = 0; i < arrEmpty.length; i++) {
+    let tableTd = document.createElement("td");
     tableTd.innerText = arrEmpty[i];
     tableTr.append(tableTd);
-  }  
+  }
   return tableTr;
- }
- 
-  function createStatsPage(event){  
-    event.preventDefault();
-    let data = JSON.parse(localStorage.getItem('statistis'));    
-    createTable(heading,data);   
+}
 
+function createStatsPage(event) {
+  event.preventDefault();
+  let data = JSON.parse(localStorage.getItem("statistis"));
+  createTable(heading, data);
+  let table = document.querySelector("table");
+  sortTable(table);
+}
+
+function sortTable(table) {
+  // получаем голову
+  let head = table.tHead;
+  // console.log(head);
+  // gjkexftv ntkj
+  let body = table.tBodies[0];
+  console.log(body);
+
+  let column_marks = head.children;
+  // console.log(column_marks);
+
+
+  let rows = body.children;
+
+  let position;
+
+  let trigger = true;
+
+  table.addEventListener('click',handler1)
+
+  function handler1(event){
+    let target =event.target;
+    if(target.tagName === 'TH'){
+      // console.log('sdfa')
+      position = [...column_marks].findIndex(element => element === target);
+      // console.log(`индекс ячейки ${position}`);
+      handler2(position);
+
+    }
+    function handler2(position){
+      if(trigger){
+        trigger = false;
+        body.replaceChildren(...sortBodyUp(position));
+      }else{
+        trigger = true;
+        body.replaceChildren(...sortBodyDown(position));
+      }
+    }
+    // console.log('sdfa');
+
+// по возрастанию
+
+function sortBodyUp(position){
+  console.log(position)  
+if(position === 0 || position === 1){
+  return [...rows].sort((firstValue,secondValue)=> ((firstValue.children[position].innerText < secondValue.children[position].innerText)?-1:1))
+} else {
+  return [...rows].sort((firstValue,secondValue)=> ((Number(firstValue.children[position].innerText) < Number(secondValue.children[position].innerText))?-1:1))
+}
+}
+// по убыванию
+function sortBodyDown(position){
+  console.log(position)
+  if(position === 0 || position === 1){
+    return [...rows].sort((firstValue,secondValue)=> ((firstValue.children[position].innerText > secondValue.children[position].innerText)?-1:1))
+  } else {
+    return [...rows].sort((firstValue,secondValue)=> ((Number(firstValue.children[position].innerText) > Number(secondValue.children[position].innerText))?-1:1))
   }
 
-
-  
+}
+  }
+}
