@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,48 +10,106 @@
     <!-- <script src="/src/app.js" defer></script> -->
     <title>English for kids</title>
 </head>
+
 <body>
     <div class="wrap">
-    <header>
-        <h1><a href = "">Shining World</a></h1>
-        <button class ="state" name="state" value="train">train</button>
-    </header>
-            <aside>
+        <div class="shadow"></div>
+        <header>            
+            <label class="btn_aside" for="aside">
+                <input class="aside" type="checkbox" id="aside">
+                <span class="aside_line"></span>
+            </label>
+            <div class="header_wrap">
+            <a href=""><h1>Shining World</h1></a>        
+            
+            <label class="state-btn" for="state">
+                <input class="state" type="checkbox" id="state">
+                <span class="switch">TRAIN</span>
+            </label>     
+           
+        </div>
+        </header>
+        <aside>           
+           
             <nav class="menu">
                 <ul>
-                <!-- <li id="zero"><a href="/">category</a></li>
-                <li id="one"><a href="/action" >action</a></li>
-                <li id="two"><a href="/animals">animals</a></li>
-                <li id="three"><a href="/birds">birds</a></li>
-                <li id="four"><a href="/cloth">cloth</a></li>
-                <li id="five"><a href="/emotions">emotions</a></li>
-                <li id="six"><a href="/hobby">hobby</a></li>
-                <li id="seven"><a href="/pets">pets</a></li>
-                <li id="eight"><a href="/sport">sport</a></li> -->
-                <li id="zero"><a href="">category</a></li>
-                <li id="one"><a href="#" >action</a></li>
-                <li id="two"><a href="#">animals</a></li>
-                <li id="three"><a href="#">birds</a></li>
-                <li id="four"><a href="#">cloth</a></li>
-                <li id="five"><a href="#">emotions</a></li>
-                <li id="six"><a href="#">hobby</a></li>
-                <li id="seven"><a href="#">pets</a></li>
-                <li id="eight"><a href="#">sport</a></li>
-                <li id="nine"><a href="#">statistics</a></li>
-            </ul>
+                    <li id="zero"><a href="">category</a></li>
+                    <li id="one"><a href="#">action</a></li>
+                    <li id="two"><a href="#">animals</a></li>
+                    <li id="three"><a href="#">birds</a></li>
+                    <li id="four"><a href="#">cloth</a></li>
+                    <li id="five"><a href="#">emotions</a></li>
+                    <li id="six"><a href="#">hobby</a></li>
+                    <li id="seven"><a href="#">pets</a></li>
+                    <li id="eight"><a href="#">sport</a></li>
+                    <li id="nine"><a href="#">statistics</a></li>
+                </ul>
             </nav>
         </aside>
         <main>
-        <div id="answers"></div>
-        <div class="content_wrap">
-            <div id = "content" class="content">
+            <!-- <div id="answers"></div> -->
+            <div class="content_wrap">
+                <div id="answers"></div>
+                <div id="content" class="content">
+                    <!-- <div class="flip-card">
+                        
+                        <div class="category birds" data-id="chick">
+                            <div class="front">
 
-            </div>
-        </div>
-    </main>
-    <footer></footer>
+                                <div class="img_wrap"><img src="/assets/images/birds/chick.jpg" alt="chick"></div>
+                                <div class="title_wrap">
+                                    <h3>chick</h3><button class="push">push</button>
+                                </div>
+
+                            </div>
+                            <div class="back">
+
+                                <div class="img_wrap"><img src="/assets/images/birds/chick.jpg" alt="chick"></div>
+                                <div class="title_wrap_ru">
+                                    <h3>цыпленок</h3>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div> -->
+                    <!-- <div class="flip-card">
+                        
+                            <div class="category birds" data-id="chick">
+                                <div class="front">
+
+                                    <div class="img_wrap"><img src="/assets/images/birds/chick.jpg" alt="chick"></div>
+                                    <div class="title_wrap">
+                                        <h3>chick</h3><button class="push">push</button>
+                                    </div>
+
+                                </div>
+                                <div class="back">
+
+                                    <div class="img_wrap"><img src="/assets/images/birds/chick.jpg" alt="chick"></div>
+                                    <div class="title_wrap_ru">
+                                        <h3>цыпленок</h3>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div> -->
+           
+
+                     
+
+
+                    </div>
+                </div>
+        </main>
+        <footer></footer>
     </div>
-
-    <script src="/src/app.js" defer></script>    
+<!-- <script src="rotate.js" defer></script> -->
+    <!-- <script src="/src/app.js" defer></script> -->
+    <!-- <script src="/src/variables.js" defer></script> -->
+    <script type="module" src="/class.js" defer></script>
+    <script type="module" src="/train.js" defer></script>
 </body>
+
 </html>
