@@ -1,6 +1,8 @@
 console.log("123");
 const FRAGMENT = document.createDocumentFragment();
-let variables = {
+// const FRAGMENT_BACK = document.createDocumentFragment();
+// константа
+let variables = { // константа
   category: [
     {
       wrap_name: "category_wrap",
@@ -658,12 +660,62 @@ let variables = {
 function createCard(value) {
   let content = document.querySelector(".content");
   value.forEach((element) => {
-    let divCard = createElement(element);
-    FRAGMENT.append(divCard);
+    let divCard = createElement(element);    
+    // let frontContent = createCard(value);
+  let frontDiv =document.createElement("div");
+  frontDiv.classList.add('front');
+  frontDiv.append(divCard);
+  // let backDiv =document.createElement("div");
+  // backDiv.classList.add('back');
+  // backDiv.append(divCard);
+  
+    // let titleWrap2 = document.createElement("div");
+    // titleWrap2.classList.add("title_wrap_back");
+    // let title = document.createElement("h3");
+    // title.innerText = element['titleRu'];
+    // titleWrap2.append(title);
+    // wrap.append(titleWrap2);
+    
+    content.append(frontDiv);
+  // content.appendChild(frontDiv);
+  // content.append(backDiv);
+  // FRAGMENT_BACK.append(backDiv);
+  // content.append(FRAGMENT_BACK);
+
   });
-  content.prepend(FRAGMENT);
+  // return FRAGMENT;
+  // content.prepend(FRAGMENT);
 }
 
+function createCard(value) {
+  let content = document.querySelector(".content");
+  value.forEach((element) => {
+    let divCard = createElement(element);    
+    // let frontContent = createCard(value);
+  // let frontDiv =document.createElement("div");
+  // frontDiv.classList.add('front');
+  // frontDiv.append(divCard);
+  let backDiv =document.createElement("div");
+  backDiv.classList.add('back');
+  backDiv.append(divCard);
+  
+    // let titleWrap2 = document.createElement("div");
+    // titleWrap2.classList.add("title_wrap_back");
+    // let title = document.createElement("h3");
+    // title.innerText = element['titleRu'];
+    // titleWrap2.append(title);
+    // wrap.append(titleWrap2);
+    
+  FRAGMENT.append(divCard);
+  // content.appendChild(frontDiv);
+  // content.append(backDiv);
+  // FRAGMENT_BACK.append(backDiv);
+  // content.append(FRAGMENT_BACK);
+
+  });
+  return FRAGMENT;
+  // content.prepend(FRAGMENT);
+}
 function createBtn() {
   let btn = document.createElement("button");
   btn.classList.add("push");
@@ -671,8 +723,8 @@ function createBtn() {
   return btn;
 }
 function createElement(element) {
-  let wrap_name = element.wrap_name;
-  let attribute_name = element.attribute_name;
+  let wrap_name = element.wrap_name;//+
+  let attribute_name = element.attribute_name;//+
   let imageLink = element.imageLink;
   let alt = element.alt;
   let wrap = document.createElement("div");
@@ -689,32 +741,72 @@ function createElement(element) {
   let title = document.createElement("h3");
   title.innerText = attribute_name;
   titleWrap.append(title);
+  //  let titleWrap2 = document.createElement("div");
+  //   titleWrap2.classList.add("title_wrap_back");
+  //   let title2 = document.createElement("h3");
+  //   title2.innerText = element['titleRu'];
+  //   titleWrap2.append(title2);
+  //   wrap.append(titleWrap2); 
   wrap.append(imgWrap);
   wrap.append(titleWrap);
   return wrap;
 }
-createCard(variables.category);
+// function createDiv (element,classOfElement,attributeFirst){
+//   let div = document.createElement(element);
+//   div.classList.add(classOfElement);
+//   if(attributeFirst != undefined){
+//       div.dataset.id = [attributeFirst];
+//   }
+//   return div;
+// }
 
-let categoryMain = document.querySelectorAll(".category_wrap");
+// let div = createDiv('div','ddf');
+// console.log(div)
+
+// createCard(variables.category);
+let divFragment = createCard(variables.category);
+content.prepend(divFragment);
+
+let categoryMain = document.querySelectorAll(".category_wrap");// константа
 
 categoryMain.forEach((element) => {
   element.addEventListener("click", addButton);
 });
 
-let link = document.querySelectorAll("a");
+let link = document.querySelectorAll("a");// константа
 link.forEach((element) => {
   element.addEventListener("click", addButton);
 });
-let statsPage = document.querySelector("#nine");
+let statsPage = document.querySelector("#nine");// константа
 statsPage.removeEventListener("click", addButton);
 
 function addButton(event) {
-  let target = event.currentTarget;
+  let target = event.currentTarget;// константа
   let text = target.textContent;
   let value = variables[text];
   let content = document.querySelector(".content");
   content.innerHTML = "";
-  createCard(value);
+
+  let element = createCard(value);
+  let element1 = createCard(value);
+
+
+  let frontDiv =document.createElement("div");
+  frontDiv.classList.add('front');
+  frontDiv.append(element);
+  // let backDiv =document.createElement("div");
+  // backDiv.classList.add('back');
+  // backDiv.append(element1);
+
+  content.append(frontDiv);
+  // content.prepend(backDiv);
+  // content.forEach((el) =>{
+    
+  //   let frontDiv =document.createElement("div");
+  //   frontDiv.classList.add('front');
+  //   frontDiv.append(el);
+  // })
+  
   let titleWrap = document.querySelectorAll(".category > .title_wrap");
   titleWrap.forEach((element) => {
     let child = element.lastChild;
@@ -724,7 +816,9 @@ function addButton(event) {
       element.append(btn);
     }
   });
-  let category = document.querySelectorAll(".category");
+
+
+  let category = document.querySelectorAll(".category");// константа
   category.forEach((element) => {
     let classValue = element.classList;
     if (classValue.length === 1) {
@@ -792,7 +886,7 @@ for (let key in variables) {
 
 // localStorage.setItem("statistis", JSON.stringify(statistis));
 function addAudio(event) {
-  let target = event.currentTarget;
+  let target = event.currentTarget;// константа
   console.log(target);
   let target2 = event.target.tagName;
   let [value1, value] = target.className.split(" ");
@@ -804,11 +898,11 @@ function addAudio(event) {
   /////////////////////////////////
   // statistis = JSON.parse(localStorage.getItem("statistis")); 
   // console.log(Object.keys(statistis)) 
-  let numberOfRepet = statistis[name]["numberOfRepetitions"];
-  numberOfRepet++;
-  statistis[name]["numberOfRepetitions"] = numberOfRepet;
+  let numberOfReapet = statistis[name]["numberOfRepetitions"];
+  numberOfReapet++;
+  statistis[name]["numberOfRepetitions"] = numberOfReapet;
   localStorage.setItem("statistis", JSON.stringify(statistis));
-  console.log(numberOfRepet);
+  console.log(numberOfReapet);
   
   /////////////////////////////////////////////
   let audio = new Audio(url);
@@ -833,7 +927,7 @@ let btn = document.querySelector(".state");
 btn.addEventListener("click", changeMode);
 
 function changeMode(event) {
-  let target = event.currentTarget;
+  let target = event.currentTarget;// константа
   let state = target.getAttribute("value");
   if (state === "train") {
     target.setAttribute("value", "play");
@@ -958,6 +1052,8 @@ let countWrong = 0;
 let state = "";
 statistis = JSON.parse(localStorage.getItem("statistis"));
 // console.log(statistis);
+
+
 function playSound(arr) {
   statistis = JSON.parse(localStorage.getItem("statistis"));
   console.log(statistis);
@@ -970,7 +1066,7 @@ function playSound(arr) {
     element.removeEventListener("click", addAudio);
     element.removeEventListener("click", addButton);
     element.addEventListener("click", function chooseCard(event) {
-      let target = event.currentTarget;
+      let target = event.currentTarget;// константа
       console.log(target);
       let targetID = event.currentTarget.dataset.id;
       console.log(targetID);

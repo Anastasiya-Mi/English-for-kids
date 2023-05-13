@@ -97,31 +97,27 @@ ul {
 }
 
 main {
-  flex: 1 1 auto;
-  /* height: 100%; */
+  flex: 1 1 auto;  
   display: flex;
   flex-direction: column;
   align-items: space-around;
   justify-content: center;
   margin-top: 100px;
-  background-color: #f0f5fa;
+  background-color: #f7f9fc;  
   overflow: hidden;
 }
 
 header {
-  display: flex;
-  /* flex-direction: row; */
+  display: flex;  
   justify-content: center;
   position: fixed;
   z-index: 3;
   width: 100%;
   min-height: 100px;
-  margin: 0 auto;
-  /* padding: 15px; */
-  /* align-items: center; */
-  background-color: #2196f3;
+  margin: 0 auto; 
+  background-color: #3459e6;
   box-shadow: 8px 8px 40px rgba(0, 0, 0, 0.15),
-    inset 1px 1px 3px rgba(215, 232, 254, 0.4),
+    inset 1px 1px 3px rgba(215, 232, 254, 0.5),
     inset -5px -5px 20px rgba(11, 28, 50, 0.05);
 }
 
@@ -150,7 +146,8 @@ footer {
   margin: 0 auto;
   padding: 15px;
   align-items: center;
-  background-color: #2196f3;
+  /* background-color: #2196f3; */
+  background-color: #3459e6;
   z-index: 3;
 }
 
@@ -160,7 +157,8 @@ footer {
   position: relative;
   width: 95px;
   height: 35px;
-  background-color: #bed1e6;
+  background-color: #f0f5fa;
+  /* background-color: #3459e6; */
   cursor: pointer;
   border-radius: 45px;
 }
@@ -175,10 +173,15 @@ footer {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(33, 150, 243, 0.3);
+  /* background-color: rgba(33, 150, 243, 0.3); */
+  background-color:#fff;
+  /* #33CEE6 */
+  /* background-color: rgba(33, 150, 243, 0.3); */
+  /* rgb(52, 89, 230) */
   font: normal 700 16px Nunito;
   letter-spacing: 0.04em;
-  color: #f0f5fa;
+  /* color: #f0f5fa; */
+  color: #3459e6;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -195,17 +198,17 @@ footer {
   bottom: 4px;
   height: 26px;
   width: 26px;
-  background-color: #f0f5fa;
+  background-color: #3459e6;
   border-radius: 50px;
   transition: 0.4s;
 }
 
 .state:focus+.switch {
-  box-shadow: 0 0 5px #f0f5fa; 
+  box-shadow: 0 0 5px #3459e6; 
 }
 
 .state:checked+.switch {
-  background-color: #ffc107;
+  background-color: #33E668;
   color: #fff;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.1);
 
@@ -272,23 +275,67 @@ footer {
   transition: 0.4s;
 }
 
-.menu {
-  padding-top: 350px;
-  padding-left: 100px;
+.menu  ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;  
 }
+li {
+  display: flex;
+  align-items: center;
+  column-gap: 15px; 
+  font: normal 500 24px Nunito;
+  cursor: pointer;
+}
+li:hover{
+  background-color: #33E668;  
+  padding-left: 10px;
+  padding-right: 10px;
+  border:2px solid #d9e3f1;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.1); 
+  color: #33E668; 
+}
+/* li > a:hover{
+  color: #33E668;
+} */
+li > a{
+  font: normal 600 24px Nunito;
+  letter-spacing: 0.04em;
+}
+li.active{
+  border:2px solid #d9e3f1;
+  border-radius: 25px;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  color: #3459e6;
+  padding-left: 10px;
+  padding-right: 10px;
 
+}
+li.active > a{
+  color: #3459e6;
+  
+}
+.icon{
+  max-width: 58px; 
+  padding: 5px; 
+}
 aside {
   position: absolute;
   z-index: 2;
   font: normal 500 24px Nunito;
   height: 100%;
   width: 25%;
-  left: -100%;
-  background-color: rgba(55, 141, 252, 0.75);
+  left: -100%;  
+  background-color: rgba(52, 89, 230); 
   box-shadow: 8px 8px 40px rgba(0, 0, 0, 0.15),
     inset 1px 1px 3px rgba(215, 232, 254, 0.4),
     inset -5px -5px 20px rgba(11, 28, 50, 0.05);
   transition: 0.7s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checked {
@@ -298,8 +345,7 @@ aside {
   height: 100%;
   width: 25%;
   left: 0;
-  transition: 0.7s;
-  background-color: rgba(55, 141, 252, 0.75);
+  transition: 0.7s;  
   box-shadow: 8px 8px 40px rgba(0, 0, 0, 0.15),
     inset 1px 1px 3px rgba(215, 232, 254, 0.4),
     inset -5px -5px 20px rgba(11, 28, 50, 0.05);
@@ -325,15 +371,6 @@ div.shadow.checked {
   display: block;
 }
 
-.category_wrap{
-  box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.2), 
-  inset -5px -4px 6px rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  /* background-color: #e4ebf5; */
-  background-color: #fff; 
-}
-/* img_wrap
-title_wrap */
 
 .content_wrap {
   display: flex;
@@ -348,46 +385,269 @@ title_wrap */
 .content {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  flex-wrap: wrap;
-  /* max-width: 1200px; */
+  gap: 25px;
+  flex-wrap: wrap;  
   justify-content: center;
   margin: 10px;  
   padding: 15px;  
 }
 
-
-img {
-  max-width: 250px;
+.category_wrap{
+  box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.5), 
+  inset -5px -4px 6px rgba(255, 255, 255, 0.4);
+  cursor: pointer;  
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
+.category_wrap:hover{
+  background-color: #f8f9fa;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.1);  
+}
+.category_wrap:hover > .title_wrap h3{
+  color: #43cc29;
+}
+.img_wrap{
+  display: flex;
+  max-width: 200px;
+  margin: 10px;
+}
+
+img {
+  width: 100%;
+}
+ .title_wrap h3,.title_wrap_ru{
+  font: normal 700 26px Nunito;
+  letter-spacing: 0.04em;
+  color: rgba(52, 89, 230);
+ }
 a.disabled {
   pointer-events: none;
 }
-
-#answers {
-  border: 2px solid black;
-  height: 70px;
-  margin: 10px;
-  width: 1100px;
+/* ---------------------------- */
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px;
+  /* background-color: dodgerblue;  */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.1);  
+  box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.5), 
+  inset -5px -4px 6px rgba(255, 255, 255, 0.4);
+  cursor: pointer;  
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  /* overflow-x: clip; */
-  flex-wrap: nowrap;
-  gap: 25px;
-  overflow-y: hidden;
+  align-items: center;
+  gap: 10px;
+  background-color: #3459e6;
+  
+ 
+}
+
+
+.flip-card > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;  
+}
+
+#content>div.flip-card.flip > div {
+  transform: rotateY(180deg);
+}
+
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  backface-visibility: hidden;  
+  background-color: #fff;  
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.1); 
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+div.front >.img_wrap,div.back >.img_wrap{
+  display: flex;
+  width: 250px;
+  max-height: 200px;
+}
+
+.front >.img_wrap img,.back >.img_wrap img{
+  display: flex;
+  max-width: 100%;
+  max-height: 150px;
+}
+.front >.title_wrap,.back >.title_wrap{
+  display: flex;
+  max-width: 100%;
+  max-height: 30px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.1); 
+  border-radius: 10px;
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; 
+  box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.5), 
+  inset -5px -4px 6px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.1); 
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.back { 
+  transform: rotateY(180deg);
+  background-color: #f8f9fa;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.1); 
+  cursor: pointer;
+}
+.back >.title_wrap h3{
+  font-size: 18px;
+}
+.title_wrap{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; 
+}
+.title_wrap_ru{
+  font-size: 12px;
+}
+.push {
+  background: transparent;
+  max-width: 32px;
+  max-height: 32px;
+  cursor: pointer;
+}
+
+div.img_wrap.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  margin: 0px;
+}
+div.img_wrap.btn > img{
+  display: flex;
+}
+
+.start_game{
+ display: flex;
+ border-color: #24a428;
+ background-color: #24a428;
+ border-style: solid;
+ border-width: 0 1px 4px 1px;
+ text-transform: uppercase;
+ cursor: pointer;
+ padding: 6px 12px;
+ margin: 4px;
+ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.1);
+ color: #fff;
+ border-radius: 5px;
+ font: normal 500 26px Nunito;
+ letter-spacing: 0.04em;
+ transition: 1s;
+}
+
+div.back.hide,div.title_wrap.hide{
+  display: none;
+}
+div.flip-card.hide{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 170px;
+  width: 260px;   
+}
+div.front.hide{
+  box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.5), 
+  inset -5px -4px 6px rgba(255, 255, 255, 0.4);
+  background-color: #24a428;
+}
+
+div.img_wrap.hide{ 
+  margin: 0;
+  padding: 0;
+  max-width: 250px;
+  min-height: auto;   
+}
+
+#answers {  
   display: none;
 
 }
-
-#answers>img {
-  mix-width: 100px;
+div#answers.show{
+  display: flex;
+  border: 2px solid rgba(128, 128, 128, 0.212);
+  height: 100px;
+  margin: 10px;
+  width: 800px;  
+  flex-wrap: nowrap;
+  gap: 25px;
+  overflow-y: hidden;
+   box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.5), inset -5px -4px 6px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.212);;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px; */
 }
 
+div#answers.show >.img_wrap > img {
+  max-width: 100px;
+  max-height: 90px;
+  border: 2px solid #fff;
+  box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.5), 
+  inset -5px -4px 6px rgba(255, 255, 255, 0.4);
+  background-color: #fff;
+  border-radius: 10px;
+}
+.repeat{
+  display: flex;
+  cursor: pointer;
+  background-color: transparent;
+}
 .correct {
   opacity: 0.5;
-
+  /* cursor: default; */
 }
 
 .end {
@@ -408,68 +668,3 @@ td {
   border: 2px solid black;
 }
 
-/* ---------------------------- */
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
-  /* Удалите это, если вы не хотите 3D-эффект */
-}
-
-/* Этот контейнер необходим для того чтобы расположить переднюю и заднюю сторону */
-.category {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Сделайте горизонтальный флип, когда вы перемещаете мышь над контейнером флип-бокса */
-/* .flip-card:hover .category {
-  transform: rotateY(180deg);
-} */
-#content>div.flip-card.flip .category {
-  transform: rotateY(180deg);
-}
-
-/* Расположите переднюю и заднюю стороны */
-.front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-color: #bbb;
-  color: black;
-}
-
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  /* background-color: dodgerblue;
-  color: white; */
-}
-
-/* Стиль лицевой стороны (запасной вариант, если изображение отсутствует) */
-/* .front {
-  background-color: #bbb;
-  color: black;
-} */
-
-/* Стиль задней стороны */
-.back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-}
-
-.title_wrap,
-.title_wrap_ru {
-  display: flex;
-  justify-content: space-between;
-}

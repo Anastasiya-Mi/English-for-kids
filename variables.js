@@ -1,5 +1,5 @@
 export const FRAGMENT = document.createDocumentFragment();
-export const words = { 
+export let words = { 
   category: [
     {
       wrap_name: "category_wrap",
@@ -62,52 +62,52 @@ export const words = {
   ],
   action: [
     {
-      wrap_name: "category",
+      wrap_name: "action",
       title: "cry",
       titleRu: "плакать",
       imageLink: "/assets/images/action/cry.jpg",
       alt: "girl crying",
-      attribute_name: ["cry" ,"плакать"],
+      attribute_name: "cry" ,
       audio: "/assets/audio/action/cry.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "action",
       title: "fly",
       titleRu: "летать",
       imageLink: "/assets/images/action/fly.jpg",
       alt: "duck fly",
-      attribute_name: ["fly","летать"],
+      attribute_name: "fly",
       audio: "/assets/audio/action/fly.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "action",
       title: "hug",
       titleRu: "обнимать",
       imageLink: "/assets/images/action/hug.jpg",
       alt: "girl hug bear",
-      attribute_name: ["hug","обнимать"],
+      attribute_name: "hug",
       audio: "/assets/audio/action/hug.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "action",
       title: "jump",
       titleRu: "прыгать",
       imageLink: "/assets/images/action/jump.jpg",
       alt: "kids jump",
-      attribute_name: ["jump","прыгать"],
+      attribute_name: "jump",
       audio: "/assets/audio/action/jump.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "action",
       title: "laugh",
       titleRu: "смеяться",
       alt: "women laugh",
       imageLink: "/assets/images/action/laugh.jpg",
-      attribute_name: ["laugh","смеяться"],
+      attribute_name: "laugh",
       audio: "/assets/audio/action/laugh.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "action",
       title: "open",
       titleRu: "открывать",
       alt: "kid open door",
@@ -116,7 +116,7 @@ export const words = {
       audio: "/assets/audio/action/open.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "action",
       title: "point",
       titleRu: "указывать",
       imageLink: "/assets/images/action/point.jpg",
@@ -125,7 +125,7 @@ export const words = {
       audio: "/assets/audio/action/point.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "action",
       title: "smile",
       titleRu: "улыбаться",
       imageLink: "/assets/images/action/smile.jpg",
@@ -136,7 +136,7 @@ export const words = {
   ],
   animals: [
     {
-      wrap_name: "category",
+      wrap_name: "animals",
       title: "bear",
       titleRu: "медведь",
       imageLink: "/assets/images/animals/bear.jpg",
@@ -145,7 +145,7 @@ export const words = {
       audio: "/assets/audio/animals/bear.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "animals",
       title: "dolphin",
       titleRu: "дельфин",
       imageLink: "/assets/images/animals/dolphin.jpg",
@@ -154,7 +154,7 @@ export const words = {
       audio: "/assets/audio/animals/dolphin.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "animals",
       title: "elephant",
       titleRu: "слон",
       imageLink: "/assets/images/animals/elephant.jpg",
@@ -163,7 +163,7 @@ export const words = {
       audio: "/assets/audio/animals/elephant.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "animals",
       title: "frog",
       titleRu: "лягушка",
       imageLink: "/assets/images/animals/frog.jpg",
@@ -172,7 +172,7 @@ export const words = {
       audio: "/assets/audio/animals/frog.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "animals",
       title: "giraffe",
       titleRu: "жираф",
       alt: "giraffe",
@@ -181,16 +181,16 @@ export const words = {
       audio: "/assets/audio/animals/giraffe.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "animals",
       title: "lion",
-      titleRu: "открывать",
+      titleRu: "лев",
       alt: "lion",
       imageLink: "/assets/images/animals/lion.jpg",
       attribute_name: "lion",
       audio: "/assets/audio/animals/lion.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "animals",
       title: "pig",
       titleRu: "свинья",
       imageLink: "/assets/images/animals/pig.jpg",
@@ -199,7 +199,7 @@ export const words = {
       audio: "/assets/audio/animals/pig.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "animals",
       title: "wolf",
       titleRu: "волк",
       imageLink: "/assets/images/animals/wolf.jpg",
@@ -210,7 +210,7 @@ export const words = {
   ],
   birds: [
     {
-      wrap_name: "category",
+      wrap_name: "birds",
       title: "chick",
       titleRu: "цыпленок",
       imageLink: "/assets/images/birds/chick.jpg",
@@ -219,7 +219,7 @@ export const words = {
       audio: "/assets/audio/birds/chick.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "birds",
       title: "chicken",
       titleRu: "курица",
       imageLink: "/assets/images/birds/chicken.jpg",
@@ -228,16 +228,16 @@ export const words = {
       audio: "/assets/audio/birds/chicken.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "birds",
       title: "flamingo",
       titleRu: "фламинго",
-      imageLink: "/assets/images/birds/flamingos.jpg",
+      imageLink: "/assets/images/birds/flamingo.jpg",
       alt: "flamingo",
       attribute_name: "flamingo",
       audio: "/assets/audio/birds/flamingo.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "birds",
       title: "owl",
       titleRu: "сова",
       imageLink: "/assets/images/birds/owl.jpg",
@@ -246,7 +246,7 @@ export const words = {
       audio: "/assets/audio/birds/owl.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "birds",
       title: "parrot",
       titleRu: "попугай",
       alt: "parrot",
@@ -255,7 +255,7 @@ export const words = {
       audio: "/assets/audio/birds/parrot.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "birds",
       title: "pigeon",
       titleRu: "голубь",
       alt: "pigeon",
@@ -264,7 +264,7 @@ export const words = {
       audio: "/assets/audio/birds/pigeon.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "birds",
       title: "raven",
       titleRu: "ворон",
       imageLink: "/assets/images/birds/raven.jpg",
@@ -273,7 +273,7 @@ export const words = {
       audio: "/assets/audio/birds/raven.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "birds",
       title: "tit",
       titleRu: "синица",
       imageLink: "/assets/images/birds/tit.jpg",
@@ -284,7 +284,7 @@ export const words = {
   ],
   cloth: [
     {
-      wrap_name: "category",
+      wrap_name: "cloth",
       title: "blouse",
       titleRu: "блузка",
       imageLink: "/assets/images/cloth/blouse.jpg",
@@ -293,7 +293,7 @@ export const words = {
       audio: "/assets/audio/cloth/blouse.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "cloth",
       title: "boot",
       titleRu: "ботинок",
       imageLink: "/assets/images/cloth/boot.jpg",
@@ -302,7 +302,7 @@ export const words = {
       audio: "/assets/audio/cloth/boot.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "cloth",
       title: "coat",
       titleRu: "пальто",
       imageLink: "/assets/images/cloth/coat.jpg",
@@ -311,7 +311,7 @@ export const words = {
       audio: "/assets/audio/cloth/coat.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "cloth",
       title: "dress",
       titleRu: "платье",
       imageLink: "/assets/images/cloth/dress.jpg",
@@ -320,7 +320,7 @@ export const words = {
       audio: "/assets/audio/cloth/dress.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "cloth",
       title: "pants",
       titleRu: "брюки",
       alt: "pants",
@@ -329,7 +329,7 @@ export const words = {
       audio: "/assets/audio/cloth/pants.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "cloth",
       title: "shirt",
       titleRu: "рубашка",
       alt: "shirt",
@@ -338,7 +338,7 @@ export const words = {
       audio: "/assets/audio/cloth/shirt.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "cloth",
       title: "shoe",
       titleRu: "обувь",
       imageLink: "/assets/images/cloth/shoe.jpg",
@@ -347,7 +347,7 @@ export const words = {
       audio: "/assets/audio/cloth/shoe.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "cloth",
       title: "skirt",
       titleRu: "юбка",
       imageLink: "/assets/images/cloth/skirt.jpg",
@@ -358,7 +358,7 @@ export const words = {
   ],
   emotions: [
     {
-      wrap_name: "category",
+      wrap_name: "emotions",
       title: "angry",
       titleRu: "злой",
       imageLink: "/assets/images/emotions/angry.jpg",
@@ -367,7 +367,7 @@ export const words = {
       audio: "/assets/audio/emotions/angry.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "emotions",
       title: "happy",
       titleRu: "счастливый",
       imageLink: "/assets/images/emotions/happy.jpg",
@@ -376,7 +376,7 @@ export const words = {
       audio: "/assets/audio/emotions/happy.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "emotions",
       title: "pride",
       titleRu: "гордый",
       imageLink: "/assets/images/emotions/pride.jpg",
@@ -385,7 +385,7 @@ export const words = {
       audio: "/assets/audio/emotions/pride.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "emotions",
       title: "sad",
       titleRu: "грустный",
       imageLink: "/assets/images/emotions/sad.jpg",
@@ -394,7 +394,7 @@ export const words = {
       audio: "/assets/audio/emotions/sad.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "emotions",
       title: "scared",
       titleRu: "испуганный",
       alt: "scared",
@@ -403,7 +403,7 @@ export const words = {
       audio: "/assets/audio/emotions/scared.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "emotions",
       title: "surprised",
       titleRu: "удивленный",
       alt: "surprised",
@@ -412,7 +412,7 @@ export const words = {
       audio: "/assets/audio/emotions/surprised.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "emotions",
       title: "tired",
       titleRu: "уставший",
       imageLink: "/assets/images/emotions/tired.jpg",
@@ -421,7 +421,7 @@ export const words = {
       audio: "/assets/audio/emotions/tired.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "emotions",
       title: "worried",
       titleRu: "обеспокоенный",
       imageLink: "/assets/images/emotions/worried.jpg",
@@ -432,7 +432,7 @@ export const words = {
   ],
   hobby: [
     {
-      wrap_name: "category",
+      wrap_name: "hobby",
       title: "coding",
       titleRu: "программирование",
       imageLink: "/assets/images/hobby/coding.jpg",
@@ -441,7 +441,7 @@ export const words = {
       audio: "/assets/audio/hobby/coding.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "hobby",
       title: "dance",
       titleRu: "танцевать",
       imageLink: "/assets/images/hobby/dance.jpg",
@@ -450,7 +450,7 @@ export const words = {
       audio: "/assets/audio/hobby/dance.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "hobby",
       title: "draw",
       titleRu: "рисовать",
       imageLink: "/assets/images/hobby/draw.jpg",
@@ -459,7 +459,7 @@ export const words = {
       audio: "/assets/audio/hobby/draw.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "hobby",
       title: "photography",
       titleRu: "фотографировать",
       imageLink: "/assets/images/hobby/photography.jpg",
@@ -468,7 +468,7 @@ export const words = {
       audio: "/assets/audio/hobby/photography.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "hobby",
       title: "play",
       titleRu: "играть",
       alt: "kids playing",
@@ -477,7 +477,7 @@ export const words = {
       audio: "/assets/audio/hobby/play.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "hobby",
       title: "reading",
       titleRu: "читать",
       alt: "children reading book",
@@ -486,7 +486,7 @@ export const words = {
       audio: "/assets/audio/hobby/reading.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "hobby",
       title: "sing",
       titleRu: "петь",
       imageLink: "/assets/images/hobby/sing.jpg",
@@ -495,7 +495,7 @@ export const words = {
       audio: "/assets/audio/hobby/sing.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "hobby",
       title: "travel",
       titleRu: "путешествовать",
       imageLink: "/assets/images/hobby/travel.jpg",
@@ -506,7 +506,7 @@ export const words = {
   ],
   pets: [
     {
-      wrap_name: "category",
+      wrap_name: "pets",
       title: "cat",
       titleRu: "кот",
       imageLink: "/assets/images/pets/cat.jpg",
@@ -515,7 +515,7 @@ export const words = {
       audio: "/assets/audio/pets/cat.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "pets",
       title: "dog",
       titleRu: "собака",
       imageLink: "/assets/images/pets/dog.jpg",
@@ -524,7 +524,7 @@ export const words = {
       audio: "/assets/audio/pets/dog.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "pets",
       title: "fish",
       titleRu: "рыба",
       imageLink: "/assets/images/pets/fish.jpg",
@@ -533,7 +533,7 @@ export const words = {
       audio: "/assets/audio/pets/fish.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "pets",
       title: "horse",
       titleRu: "лошадь",
       imageLink: "/assets/images/pets/horse.jpg",
@@ -542,7 +542,7 @@ export const words = {
       audio: "/assets/audio/pets/horse.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "pets",
       title: "mouse",
       titleRu: "мышь",
       alt: "mouse",
@@ -551,7 +551,7 @@ export const words = {
       audio: "/assets/audio/pets/mouse.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "pets",
       title: "rabbit",
       titleRu: "кролик",
       alt: "rabbit",
@@ -560,7 +560,7 @@ export const words = {
       audio: "/assets/audio/pets/rabbit.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "pets",
       title: "sheep",
       titleRu: "овца",
       imageLink: "/assets/images/pets/sheep.jpg",
@@ -569,7 +569,7 @@ export const words = {
       audio: "/assets/audio/pets/sheep.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "pets",
       title: "turtle",
       titleRu: "черепаха",
       imageLink: "/assets/images/pets/turtle.jpg",
@@ -580,7 +580,7 @@ export const words = {
   ],
   sport: [
     {
-      wrap_name: "category",
+      wrap_name: "sport",
       title: "dive",
       titleRu: "нырять",
       imageLink: "/assets/images/sport/dive.jpg",
@@ -589,7 +589,7 @@ export const words = {
       audio: "/assets/audio/sport/dive.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "sport",
       title: "fish",
       titleRu: "рыбачить",
       imageLink: "/assets/images/sport/fish.jpg",
@@ -598,7 +598,7 @@ export const words = {
       audio: "/assets/audio/sport/fish.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "sport",
       title: "ride",
       titleRu: "ездить",
       imageLink: "/assets/images/sport/ride.jpg",
@@ -607,7 +607,7 @@ export const words = {
       audio: "/assets/audio/sport/ride.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "sport",
       title: "run",
       titleRu: "бегать",
       imageLink: "/assets/images/sport/run.jpg",
@@ -616,7 +616,7 @@ export const words = {
       audio: "/assets/audio/sport/run.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "sport",
       title: "skating",
       titleRu: "катание на коньках",
       alt: "skating",
@@ -625,7 +625,7 @@ export const words = {
       audio: "/assets/audio/sport/skating.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "sport",
       title: "skiing",
       titleRu: "кататься на сноуборде",
       alt: "skiing",
@@ -634,7 +634,7 @@ export const words = {
       audio: "/assets/audio/sport/skiing.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "sport",
       title: "skip",
       titleRu: "прыгать на скакалке",
       imageLink: "/assets/images/sport/skip.jpg",
@@ -643,7 +643,7 @@ export const words = {
       audio: "/assets/audio/sport/skip.mp3",
     },
     {
-      wrap_name: "category",
+      wrap_name: "sport",
       title: "swim",
       titleRu: "плавать",
       imageLink: "/assets/images/sport/swim.jpg",
@@ -654,29 +654,45 @@ export const words = {
   ],
 };
 
+
+
 // переменныые дом дерево
 
-export const categoryMain =[...document.getElementsByClassName(".category_wrap")];
+// export let actionMain =document.querySelectorAll(".action_wrap");
 // let target = event.currentTarget;
 
 export let content =document.querySelector(".content");
 console.log(content)
 
-export const link = document.querySelectorAll("a");
+export const link = document.querySelectorAll("li");
 
 export const statsPage = document.querySelector("#nine");
 export let category = document.querySelectorAll(".category");
 
+export let btnRotate = "./assets/images/icons/rotate.png";
+export let btnRepeatImg = '<img src = "./assets/images/icons/refresh.png" alt = "repeat">';
+
+// export let countCorrect = 0;
+// export let countWrong = 0;
+// export let stateOfGame = "";
+
+// export let repeatTrackValue = "";
+// export let clickedValue = "";
+// export let resultSuccess = createImg("success", "/assets/images/success.jpg");
+// export let resultAudioSuccess = new Audio("/assets/audio/success.mp3");
+// export let resultAudioFailure = new Audio("/assets/audio/failure.mp3");
+
+
 // export default words;
 // export default FRAGMENT;
-// export default categoryMain;
+// export default actionMain;
 // export default content;
 // export default link;
-// export default category;
+// export default action;
 
 // FRAGMENT
-//   FRAGMENT,categoryMain,content,link,category};
+//   FRAGMENT,actionMain,content,link,action};
 // export default words;
 // export const FRAGMENT_BLOCK = variables.FRAGMENT;
-// export const categoryWrap = variables.categoryMain;
+// export const actionWrap = variables.actionMain;
 // export const contentPart = variables.content;

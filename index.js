@@ -1,79 +1,55 @@
-let cards = document.querySelector('.content');
-const FRAGMENT = document.createDocumentFragment();
+import { words, content, link, category, FRAGMENT } from "./variables.js";
+import {
+  createFrontCard,
+  createCard,
+  createBtn,
+  createTitle,
+  createImg,
+  createDiv,
+  createStartPage,
+  createBackCard,
+} from "./create-elements.js";
+
+import {
+  state,
+  shadow,
+  footer,
+  header,
+  headerWrap,
+  aside,
+  btn_aside,
+  contentWrap,
+  menu,
+} from "./aside.js";
+import {
+  changeMode,
+  closeSidebar,
+  showSidebar,
+  removeChecked,
+} from "./aside.js";
+import {
+  createCardOnLink,
+  CardsSoftCategories,
+  createSoftCategoriesOnClick,
+  Cards,
+} from "./class.js";
+import {
+  changeState,
+  addPlayMode,
+  addPlayModeForCards,
+  removePlayMode,
+  addBtnStartGame,
+  removeEventListener,
+  returnEventListener,
+} from "./change-mode.js";
 
 
-document.addEventListener('click',(event)=>{
-    let target = event.target;
-    event.preventDefault();
-    let targetCards = cards.children;    
-    if(!target.matches("a") || targetCards.lenght === 0){
-        return;
-    } else{
-    route(event);
-    }
-    
-  });
-  
+let startPage = new Cards(words.category);
+startPage.render();
+startPage.createCard();
 
-  let route = () =>{
-    window.history.pushState({},"",event.target.href);
-    urlLocationHandler();
-  }
+link.forEach((element) => {
+  element.addEventListener("click", createCardOnLink);
+});
 
-  
-
-
-  let urlRoutes = {   
-    404:"/templates/404.html",
-    "/":"/index.html",
-    "/action":"/templates/action.html",
-    "/animals":"/templates/animals.html",
-    "/birds":"/templates/birds.html",
-    "/cloth":"/templates/cloth.html",
-    "/emotions":"/templates/emotions.html",
-    "/hobby":"/templates/hobby.html",
-    "/pets":"/templates/pets.html",    
-    "/sport":"/templates/sport.html",  
-  
-  }
-
-    let urlLocationHandler = async()=>{
-    let location = window.location.pathname;
-    let html = await fetch(urlRoutes[location]).then((data) => data.text());// с помощью метода text переводим html ??? тут подумать ч/з фрагмент
-// let html = await fetch(urlRoutes[location]);
-console.log(html)
-// cards.innerHTML = html;
-
-    if(location.length === 0){
-        location = "/";
-    }
-//   targetCards.lenght === 0
-  
-//   let urlRoute = (event)=>{
-//     event = event || window.event;
-//     event.preventDefault();
-//     window.history.pushState({},"",event.target.href);
-    // urlLocationHandler()
-  }
-  
-  urlLocationHandler();
-  window.route = route;
-  window.onpopstate = urlLocationHandler;
-  
-//   let route = urlRoutes[location] || urlRoutes[404];
-//   let html = await fetch(route.template).then((response) => response.text());
-//   console.log(html)
-//   let contentID = document.getElementById("content");
-//   // FRAGMENT.append(html);
-//   // contentID.prepend(FRAGMENT);
-//   }
-  
-//   window.onpopstate = urlLocationHandler;
-//   window.route = urlRoute;
-//   urlLocationHandler();
-  
-  
-  
-  
-  
-  
+state.addEventListener('click',changeState);
