@@ -1,2 +1,2 @@
-https://Anastasiya-Mi.github.io/English-for-kids/index.html
+ https://anastasiya-mi.github.io/English-for-kids/
 
