@@ -1,5 +1,5 @@
 export const FRAGMENT = document.createDocumentFragment();
-export let words = { 
+export let words = {
   category: [
     {
       wrap_name: "category_wrap",
@@ -67,7 +67,7 @@ export let words = {
       titleRu: "плакать",
       imageLink: "/assets/images/action/cry.jpg",
       alt: "girl crying",
-      attribute_name: "cry" ,
+      attribute_name: "cry",
       audio: "/assets/audio/action/cry.mp3",
     },
     {
@@ -654,15 +654,7 @@ export let words = {
   ],
 };
 
-
-
-// переменныые дом дерево
-
-// export let actionMain =document.querySelectorAll(".action_wrap");
-// let target = event.currentTarget;
-
-export let content =document.querySelector(".content");
-console.log(content)
+export let content = document.querySelector(".content");
 
 export const link = document.querySelectorAll("li");
 
@@ -670,29 +662,14 @@ export const statsPage = document.querySelector("#nine");
 export let category = document.querySelectorAll(".category");
 
 export let btnRotate = "./assets/images/icons/rotate.png";
-export let btnRepeatImg = '<img src = "./assets/images/icons/refresh.png" alt = "repeat">';
+export let btnRepeatImg =
+  '<img src = "./assets/images/icons/refresh.png" alt = "repeat">';
 
-// export let countCorrect = 0;
-// export let countWrong = 0;
-// export let stateOfGame = "";
-
-// export let repeatTrackValue = "";
-// export let clickedValue = "";
-// export let resultSuccess = createImg("success", "/assets/images/success.jpg");
-// export let resultAudioSuccess = new Audio("/assets/audio/success.mp3");
-// export let resultAudioFailure = new Audio("/assets/audio/failure.mp3");
-
-
-// export default words;
-// export default FRAGMENT;
-// export default actionMain;
-// export default content;
-// export default link;
-// export default action;
-
-// FRAGMENT
-//   FRAGMENT,actionMain,content,link,action};
-// export default words;
-// export const FRAGMENT_BLOCK = variables.FRAGMENT;
-// export const actionWrap = variables.actionMain;
-// export const contentPart = variables.content;
+export let heading = [
+  "word",
+  "translate",
+  "clicked in train mode",
+  "guessed in play mode",
+  "mistakes in play mode",
+  "percentage of correct answers",
+];

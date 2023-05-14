@@ -1,4 +1,4 @@
-// let module;
+
 module.exports = {
   env: {
     browser: true,

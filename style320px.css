@@ -48,7 +48,7 @@ main {
   justify-content: center;
   margin-top: 100px;
   background-color: #f7f9fc;
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 header {
@@ -66,19 +66,20 @@ header {
 }
 
 .header_wrap {
-  width: 1200px;
+  /* width: 1200px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 h1 {
-  font: normal 500 36px Nunito;
+  font: normal 500 24px Nunito;
   letter-spacing: 0.04em;
   color: #f0f5fa;
+  width: 100px;
 }
 
 footer {
@@ -98,11 +99,11 @@ footer {
 .state-btn {
   display: inline-block;
   position: relative;
-  width: 95px;
-  height: 35px;
+  width: 75px;
+  height: 25px;
   background-color: #f0f5fa;
   cursor: pointer;
-  border-radius: 45px;
+  border-radius: 25px;
 }
 
 .state {
@@ -116,7 +117,7 @@ footer {
   bottom: 0;
   right: 0;
   background-color: #fff;
-  font: normal 700 16px Nunito;
+  font: normal 400 14px Nunito;
   letter-spacing: 0.04em;
   color: #3459e6;
   display: flex;
@@ -133,8 +134,8 @@ footer {
   position: absolute;
   left: 4px;
   bottom: 4px;
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   background-color: #3459e6;
   border-radius: 50px;
   transition: 0.4s;
@@ -153,7 +154,7 @@ footer {
 
 .state:checked+.switch::before {
   background-color: #fff;
-  transform: translateX(59px);
+  transform: translateX(49px);
 }
 
 .state:checked+.switch {
@@ -167,8 +168,8 @@ footer {
   position: relative;
   width: 35px;
   height: 35px;
-  top: 39px;
-  left: 70px;
+  top: 29px;
+  left: 0px;
   cursor: pointer;
 
 }
@@ -237,7 +238,7 @@ li:hover {
 }
 
 li>a {
-  font: normal 600 24px Nunito;
+  font: normal 400 16px Nunito;
   letter-spacing: 0.04em;
 }
 
@@ -258,7 +259,7 @@ li.active>a {
 }
 
 .icon {
-  max-width: 58px;
+  max-width: 48px;
   padding: 5px;
 }
 
@@ -315,8 +316,7 @@ div.shadow.checked {
 
 .content_wrap {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
+  flex-direction: column;  
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
@@ -571,30 +571,28 @@ div.img_wrap.hide {
 div#answers.show {
   display: flex;
   border: 2px solid rgba(128, 128, 128, 0.212);
-  height: 100px;
+  height: 50px;
   margin: 10px;
-  width: 800px;
+  width: 300px;
   flex-wrap: nowrap;
-  gap: 25px;
+  /* gap: 5px; */
   overflow-y: hidden;
   box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.5), inset -5px -4px 6px rgba(255, 255, 255, 0.4);
   cursor: pointer;
   background-color: rgba(128, 128, 128, 0.212);  
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 5px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
  
 }
 
 div#answers.show>.img_wrap>img {
-  max-width: 100px;
-  max-height: 90px;
-  border: 2px solid #fff;
-  box-shadow: inset 5px 5px 8px rgba(109, 114, 121, 0.5),
-    inset -5px -4px 6px rgba(255, 255, 255, 0.4);
+  width: 50px; 
+  border: 2px solid #fff; 
   background-color: #fff;
   border-radius: 10px;
 }
@@ -603,6 +601,7 @@ div#answers.show>.img_wrap>img {
   display: flex;
   cursor: pointer;
   background-color: transparent;
+  max-width: 50px;
 }
 
 .correct {
@@ -661,7 +660,7 @@ table {
   display: flex;
   flex-direction: column; 
   border-radius: 10px;
-  max-width: 950px;
+  /* max-width: 950px; */
 }
 
 thead {
@@ -690,8 +689,10 @@ tbody {
 
 th,
 td {  
-  width: 20%;
-  height: 10%;
+    display: flex;
+  width: 25%;
+  height: 15%;
+  word-wrap:break-word;
 }
 
 th,

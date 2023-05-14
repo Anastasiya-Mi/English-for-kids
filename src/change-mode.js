@@ -1,57 +1,17 @@
+import { words } from "./variables.js";
+import { createBtn } from "./create-elements.js";
+import { state, btn_aside } from "./aside.js";
+import { showSidebar } from "./aside.js";
 import {
-  words,
-  content,
-  link,
-  category,
-  FRAGMENT,
-  btnRepeatImg,
-} from "./variables.js";
-import {
-  createFrontCard,
-  createCard,
-  createBtn,
-  createTitle,
-  createImg,
-  createDiv,
-  createStartPage,
-  createBackCard,
-} from "./create-elements.js";
-import {
-  state,
-  shadow,
-  footer,
-  header,
-  headerWrap,
-  aside,
-  btn_aside,
-  contentWrap,
-  menu,
-} from "./aside.js";
-import {
-  changeMode,
-  closeSidebar,
-  showSidebar,
-  removeChecked,
-} from "./aside.js";
-import {
-  createCardOnLink,
   CardsSoftCategories,
   createSoftCategoriesOnClick,
-  Cards,
+  playAudio,
 } from "./class.js";
-import {
-  playQueue,
-//   chooseCard,
-  createRepeatBtn,
-  random,
-  repeat,
-  shake,
-  createRandomQueue,
-} from "./game-mode.js";
+import { playQueue, random } from "./game-mode.js";
+import { setNumberOfRepeats } from "./localstorage.js";
 
 export function changeState(event) {
-  let status = state.checked;
-  console.log(status);
+  let status = state.checked;  
   if (status) {
     let firstChild = document.querySelector(
       ".content > div:nth-child(1)"
@@ -66,10 +26,19 @@ export function changeState(event) {
       addBtnStartGame();
       addPlayModeForCards();
       removeEventListener();
+      let category = document.querySelectorAll(".front");
+      category.forEach((element) => {
+        element.removeEventListener("click", playAudio);
+        element.removeEventListener("click", setNumberOfRepeats);
+      });
       let btnStartsGame = document.querySelector(".start_game");
       btnStartsGame.addEventListener("click", playQueue);
     }
   } else {
+    let answers = document.querySelector("#answers");
+    if (answers.childNodes.length != 0) {
+      answers.classList.remove("show");
+    }
     let firstChild = document.querySelector(
       ".content > div:nth-child(1)"
     ).className;
@@ -108,8 +77,7 @@ export function removePlayMode() {
   let value = document.querySelector(
     ".content > div:nth-child(1)>div:nth-child(1)"
   ).className;
-  let cards = words[value];
-  console.log(value);
+  let cards = words[value];  
   content.innerHTML = "";
   let newCards = new CardsSoftCategories(cards);
   newCards.render();
