@@ -127,7 +127,7 @@ function createCardsForRepeat(event) {
 
   if (result.length === 0) {
     content.innerHTML = "";
-    let resultImg = createImg("img", "/assets/images/success.png", "success");
+    let resultImg = createImg("img", "./assets/images/success.png", "success");
     resultImg.classList.add("game_end");
     content.append(resultImg);
     let message = "Nothing to repeat";

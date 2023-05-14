@@ -19,8 +19,8 @@ export function playQueue(event) {
 export function playSound(arr) {
   let index = 0;
   let clickedValue = "";
-  let right = new Audio("/assets/audio/correct.mp3");
-  let wrong = new Audio("/assets/audio/error.mp3");
+  let right = new Audio("./assets/audio/correct.mp3");
+  let wrong = new Audio("./assets/audio/error.mp3");
   let name = playMode(index, arr, countCorrect, countWrong);
   let currentGame = document.querySelectorAll("div.flip-card.hide");
   currentGame.forEach((element) => {
@@ -39,7 +39,7 @@ export function playSound(arr) {
           field.classList.add("show");          
           let correctImg = createImg(
             "img",
-            "/assets/images/right.png",
+            "./assets/images/right.png",
             "right"
           );
           clip();
@@ -51,7 +51,7 @@ export function playSound(arr) {
           countWrong++;          
           let field = document.querySelector("#answers");
           field.classList.add("show");          
-          let wrongImg = createImg("img", "/assets/images/wrong.png", "wrong");
+          let wrongImg = createImg("img", "./assets/images/wrong.png", "wrong");
           clip();
           FRAGMENT.append(wrongImg);
           field.append(FRAGMENT);
@@ -117,9 +117,9 @@ export function showResult(value) {
   let resultImg;
   let resultAudio;
   if (value === "success") {
-    resultImg = createImg("img", "/assets/images/success.png", "success");
+    resultImg = createImg("img", "./assets/images/success.png", "success");
     resultImg.classList.add("game_end");
-    resultAudio = new Audio("/assets/audio/success.mp3");
+    resultAudio = new Audio("./assets/audio/success.mp3");
     resultAudio.play();
     content.append(resultImg);
     let btnRepeat = document.querySelector(".repeat");
@@ -134,9 +134,9 @@ export function showResult(value) {
       document.location.href = "";
     }, 3000);
   } else if (value === "failure") {
-    resultImg = createImg("img", "/assets/images/failure.png", "failure");
+    resultImg = createImg("img", "./assets/images/failure.png", "failure");
     resultImg.classList.add("game_end");
-    resultAudio = new Audio("/assets/audio/failure.mp3");
+    resultAudio = new Audio("./assets/audio/failure.mp3");
     resultAudio.play();
     content.append(resultImg);
     let message = "wrong" + " " + `${countWrong}`;
