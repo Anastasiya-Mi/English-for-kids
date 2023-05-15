@@ -41,7 +41,7 @@ export let words = {
       wrap_name: "category_wrap",
       title: "Hobby",
       alt: "singing cat",
-      imageLink: "/assets/images/category/hobby_category.png",
+      imageLink: "./assets/images/category/hobby_category.png",
       attribute_name: "hobby",
     },
     {
