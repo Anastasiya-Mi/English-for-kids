@@ -1,8 +1,8 @@
-export let state = document.querySelector(".state");
-export let shadow = document.querySelector(".shadow");
-export let footer = document.querySelector("footer");
-export let header = document.querySelector("header");
-export let headerWrap = document.querySelector(".header_wrap");
+export const state = document.querySelector(".state");
+export const shadow = document.querySelector(".shadow");
+export const footer = document.querySelector(".footer");
+export const header = document.querySelector(".header");
+export const headerWrap = document.querySelector(".header_wrap");
 
 state.addEventListener("click", changeMode);
 export function changeMode(event) {
@@ -15,10 +15,10 @@ export function changeMode(event) {
   }
 }
 
-export let aside = document.querySelector("aside");
-export let btn_aside = document.querySelector(".aside");
-export let contentWrap = document.querySelector(".content_wrap");
-export let menu = document.querySelector("menu");
+export const aside = document.querySelector(".aside_menu");
+export const btn_aside = document.querySelector(".aside");
+export const contentWrap = document.querySelector(".content_wrap");
+export const menu = document.querySelector(".menu");
 
 btn_aside.addEventListener("click", showSidebar);
 
