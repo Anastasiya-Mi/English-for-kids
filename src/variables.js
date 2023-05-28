@@ -662,8 +662,7 @@ export const statsPage = document.querySelector("#nine");
 export let category = document.querySelectorAll(".category");
 
 export let btnRotate = "./assets/images/icons/rotate.png";
-export let btnRepeatImg =
-  '<img src = "./assets/images/icons/refresh.png" alt = "repeat">';
+export let btnRepeatImg = '<img src = "./assets/images/icons/refresh.png" alt = "repeat">';
 
 export let heading = [
   "word",

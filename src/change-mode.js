@@ -11,35 +11,35 @@ import { playQueue, random } from "./game-mode.js";
 import { setNumberOfRepeats } from "./localstorage.js";
 
 export function changeState(event) {
-  let status = state.checked;  
+  const status = state.checked;  
   if (status) {
-    let firstChild = document.querySelector(
+    const firstChild = document.querySelector(
       ".content > div:nth-child(1)"
     ).className;
     if (firstChild === "category_wrap") {
       addBtnStartGame();
-      removeEventListener();
-      let btnStartsGame = document.querySelector(".start_game");
+      deleteEventListener();
+      const btnStartsGame = document.querySelector(".start_game");
       btnStartsGame.addEventListener("click", addPlayMode);
       btnStartsGame.addEventListener("click", playQueue);
     } else {
       addBtnStartGame();
       addPlayModeForCards();
-      removeEventListener();
-      let category = document.querySelectorAll(".front");
+      deleteEventListener();
+      const category = document.querySelectorAll(".front");
       category.forEach((element) => {
         element.removeEventListener("click", playAudio);
         element.removeEventListener("click", setNumberOfRepeats);
       });
-      let btnStartsGame = document.querySelector(".start_game");
+      const btnStartsGame = document.querySelector(".start_game");
       btnStartsGame.addEventListener("click", playQueue);
     }
   } else {
-    let answers = document.querySelector("#answers");
+    const answers = document.querySelector("#answers");
     if (answers.childNodes.length != 0) {
       answers.classList.remove("show");
     }
-    let firstChild = document.querySelector(
+    const firstChild = document.querySelector(
       ".content > div:nth-child(1)"
     ).className;
     if (firstChild === "category_wrap") {
@@ -51,57 +51,77 @@ export function changeState(event) {
   }
 }
 
-export function addPlayMode(event) {
-  let cards = random();
-  let content = document.querySelector(".content");
+export function createNewCards(value){
+  const content = document.querySelector(".content");
   content.innerHTML = "";
-  let newCards = new CardsSoftCategories(cards);
+  const newCards = new CardsSoftCategories(cards);
   newCards.render();
+}
+
+export function addPlayMode(event) {
+  const cards = random();
+  createNewCards(cards);
+  ////////////////////
+  // let content = document.querySelector(".content");
+  // content.innerHTML = "";
+  // let newCards = new CardsSoftCategories(cards);
+  // newCards.render();
+  //////////////
   newCards.hideFragment();
 }
 
 export function addPlayModeForCards() {
-  let value = document.querySelector(
+  const value = document.querySelector(
     ".content > div:nth-child(1) > div:nth-child(1)"
   ).className;
-  let cards = words[value];
-  let content = document.querySelector(".content");
-  content.innerHTML = "";
-  let newCards = new CardsSoftCategories(cards);
-  newCards.render();
+  const cards = words[value];
+  ///////////////
+  createNewCards(cards);
+  // let content = document.querySelector(".content");
+  // content.innerHTML = "";
+  // let newCards = new CardsSoftCategories(cards);
+  // newCards.render();
+  /////////////
   newCards.hideFragment();
 }
 
 export function removePlayMode() {
-  let content = document.querySelector(".content");
-  let value = document.querySelector(
+  
+  const value = document.querySelector(
     ".content > div:nth-child(1)>div:nth-child(1)"
   ).className;
-  let cards = words[value];  
-  content.innerHTML = "";
-  let newCards = new CardsSoftCategories(cards);
-  newCards.render();
+  const cards = words[value];  
+  createNewCards(cards);
+  //////////
+  // let content = document.querySelector(".content");
+  // content.innerHTML = "";
+  // let newCards = new CardsSoftCategories(cards);
+  // newCards.render();
+  //////////////
   newCards.btnEvent();
   newCards.audioEvent();
   newCards.showFragment();
 }
 
 export function addBtnStartGame() {
-  let content = document.querySelector(".content_wrap");
-  let btnStart = document.querySelector(".start_game");
-  if (btnStart) {
-    return;
-  } else {
-    let btnStartGame = createBtn("button", "start_game");
+  const content = document.querySelector(".content_wrap");
+  const btnStart = document.querySelector(".start_game");
+  if (!btnStart) {
+    const btnStartGame = createBtn("button", "start_game");
     btnStartGame.innerText = "start game";
     content.append(btnStartGame);
   }
+  // } else {
+  //   const btnStartGame = createBtn("button", "start_game");
+  //   btnStartGame.innerText = "start game";
+  //   content.append(btnStartGame);
+  // }
 }
 
-export function removeEventListener() {
+export function deleteEventListener() {
   btn_aside.removeEventListener("click", showSidebar);
   btn_aside.setAttribute("disabled", "disabled");
-  let categoryMain = document.querySelectorAll(".category_wrap");
+  const categoryMain = document.querySelectorAll(".category_wrap");
   categoryMain.forEach((element) => {
     element.removeEventListener("click", createSoftCategoriesOnClick);
   });
@@ -110,15 +130,15 @@ export function removeEventListener() {
 export function returnEventListener() {
   btn_aside.addEventListener("click", showSidebar);
   btn_aside.removeAttribute("disabled", "disabled");
-  let categoryMain = document.querySelectorAll(".category_wrap");
+  const categoryMain = document.querySelectorAll(".category_wrap");
   categoryMain.forEach((element) => {
     element.addEventListener("click", createSoftCategoriesOnClick);
   });
-  let btnStartGame = document.querySelector(".start_game");
+  const btnStartGame = document.querySelector(".start_game");
   if (btnStartGame != null) {
     btnStartGame.remove();
   }
-  let btnRepeat = document.querySelector(".repeat");
+  const btnRepeat = document.querySelector(".repeat");
   if (btnRepeat != null) {
     btnRepeat.remove();
   }

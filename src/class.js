@@ -3,6 +3,7 @@ import { createCard, createStartPage } from "./create-elements.js";
 
 import { createActiveLink } from "./aside.js";
 import { setNumberOfRepeats } from "./localstorage.js";
+import { createNewCards } from "./change-mode.js";
 
 export class Cards {
   constructor(value) {
@@ -38,10 +39,13 @@ export function createSoftCategoriesOnClick(event) {
     target = event.target.textContent;
   }
   let value = words[target];
-  let content = document.querySelector(".content");
-  content.innerHTML = "";
-  let category = new CardsSoftCategories(value);
-  category.render();
+  ////////
+  createNewCards(value);
+  // let content = document.querySelector(".content");
+  // content.innerHTML = "";
+  // let category = new CardsSoftCategories(value);
+  // category.render();
+  //////////
   category.btnEvent();
   category.audioEvent();
 }

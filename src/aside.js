@@ -41,8 +41,7 @@ export function removeChecked() {
   state.removeAttribute("disabled");
 }
 export function showSidebar(event) {
-  const target = event.currentTarget;
-  console.log(target);
+  const target = event.currentTarget;  
   if (target.checked) {
     aside.classList.add("checked");
     contentWrap.classList.add("checked_wrap");
@@ -56,7 +55,7 @@ export function showSidebar(event) {
 export function createActiveLink(event) {
   const target = event.currentTarget;
   const classActive = document.querySelector(".active");
-  if (classActive != target) {
+  if (classActive !== target) {
     classActive.classList.toggle("active");
     target.classList.toggle("active");
     btn_aside.checked = false;
